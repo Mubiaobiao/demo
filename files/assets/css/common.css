@@ -73,14 +73,14 @@
 }
 
 .workshop-item {
-  padding: 8px;
+  padding: 6px;
   overflow: hidden;
 }
 
 .workshop-item .workshop-left {
   float: left;
   width: 40%;
-  padding-right:4px;
+  padding-right: 4px;
 }
 
 .workshop-item .workshop-right {
@@ -89,64 +89,112 @@
 }
 
 .workshop-item .workshop-post {
-  height: 200px;
+  height: 204px;
+  margin-bottom: 6px;
 }
 
-.workshop-item .workshop-post img{
-  width:100%;
-  height:100%;
+.workshop-item .workshop-post img {
+  width: 100%;
+  height: 100%;
 }
 
 .workshop-item .workshop-title {
   text-align: center;
-  border-bottom:2px solid #fd7a6b;
-  padding-bottom:4px;
+  background-image: linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%);
+  padding: 4px;
+  color: #fff;
+  margin-bottom: 12px;
+  border-radius: 2px;
 }
 
-.workshop-status{
-  margin-bottom:20px;
+.workshop-status {
+  margin-bottom: 12px;
 }
-.workshop-status,.workshop-times{
+
+.workshop-status,
+.workshop-times {
   display: table;
-  width:100%;
+  width: 100%;
+  table-layout: fixed;
 }
 
-.workshop-status-rows,.workshop-times-rows{
+.workshop-status-rows,
+.workshop-times-rows {
   display: table-row;
 }
 
-.workshop-status-item{
-  font-size:12px;
+.workshop-status-item {
+  font-size: 12px;
   display: table-cell;
-  width:15%;
-  padding:6px 2px;
+  width: 28%;
+  padding: 0 2px 6px;
+  vertical-align: middle;
 }
 
-.workshop-status-item.twoPart{
-  width:50%;
+.workshop-status-item.twoPart {
+  width: 44%;
 }
 
-.workshop-times-item{
+.workshop-times-item.onePart {
+  width: 30%;
+}
+
+.workshop-times-item.threePart {
+  width: 70%;
+}
+
+.workshop-times-item {
   display: table-cell;
-  padding:6px 2px;
-
+  padding: 0 2px 6px;
+  vertical-align: middle;
 }
 
-.workshop-status-item span,.workshop-times-item span{
-  border:1px solid #fd7a6b;
+.workshop-status-item span,
+.workshop-times-item span {
   display: block;
   text-align: center;
-  padding:0 2px;
+  padding: 7px 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.workshop-status-item span.c1,
+.workshop-times-item span.c1 {
   white-space: nowrap;
-  overflow:hidden;
-  line-height: 20px;
+  background-image: linear-gradient(135deg, #2AFADF 10%, #4C83FF 100%);
 }
 
-.workshop-rate{
-  height:160px;
+.workshop-status-item span.c2,
+.workshop-times-item span.c2 {
+  white-space: nowrap;
+  background-image: linear-gradient(135deg, #FFD3A5 10%, #FD6585 100%);
 }
 
-.chart-instance{
-  width:100%;
-  height:100%;
+.workshop-status-item span.c3,
+.workshop-times-item span.c3 {
+  white-space: nowrap;
+  background-image: linear-gradient(135deg, #EE9AE5 10%, #5961F9 100%);
+}
+
+.workshop-rate {
+  height: 155px;
+  padding-top: 10px;
+}
+
+.chart-instance {
+  min-width: 155px;
+  height: 100%;
+}
+
+.user-profile span,
+.user-profile i {
+  color: #fff;
+}
+
+.carousel-item .row {
+  margin-right: 0;
+  margin-left: 0;
 }
