@@ -73,14 +73,14 @@
 }
 
 .workshop-item {
-  padding: 6px;
+  padding: 14px 14px;
   overflow: hidden;
 }
 
 .workshop-item .workshop-left {
   float: left;
   width: 40%;
-  padding-right: 4px;
+  padding-right: 10px;
 }
 
 .workshop-item .workshop-right {
@@ -90,7 +90,7 @@
 
 .workshop-item .workshop-post {
   height: 204px;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
 
 .workshop-item .workshop-post img {
@@ -100,11 +100,44 @@
 
 .workshop-item .workshop-title {
   text-align: center;
-  background-image: linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%);
-  padding: 4px;
-  color: #fff;
+  color: #00ffea;
   margin-bottom: 12px;
-  border-radius: 2px;
+  height:45px;
+  line-height:45px;
+  background-image: url(../images/bg-title-middle.png);
+  background-repeat: repeat-x;
+  background-size:1px 100%;
+  margin:0 40px;
+  position: relative;
+  margin-bottom:10px;
+
+}
+.workshop-item .workshop-title span{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.workshop-item .workshop-title:before,
+.workshop-item .workshop-title:after{
+  content:'';
+  display: block;
+  position: absolute;
+  width:40px;
+  height:45px;
+  top:0;
+
+  background-repeat: no-repeat;
+  background-size:auto 45px;
+}
+
+.workshop-item .workshop-title:before{
+  background-image: url(../images/bg-title-left.png);
+  left:-37px;
+}
+.workshop-item .workshop-title:after{
+  background-image: url(../images/bg-title-right.png);
+  right:-40px;
 }
 
 .workshop-status {
@@ -113,19 +146,32 @@
 
 .workshop-status,
 .workshop-times {
-  display: table;
   width: 100%;
   table-layout: fixed;
+  background-color:#100f37;
 }
 
-.workshop-status-rows,
-.workshop-times-rows {
-  display: table-row;
+.workshop-times {
+  margin: 0;
+}
+
+.workshop-status td,
+.workshop-times td {
+  border-color: #085294;
+  padding: 9px 6px;
+}
+
+.workshop-other-item {
+  padding-left: 2px;
+}
+
+.workshop-other-item span {
+  height: 108px;
+  background-color: #5ab5da;
 }
 
 .workshop-status-item {
   font-size: 12px;
-  display: table-cell;
   width: 28%;
   padding: 0 2px 6px;
   vertical-align: middle;
@@ -144,8 +190,6 @@
 }
 
 .workshop-times-item {
-  display: table-cell;
-  padding: 0 2px 6px;
   vertical-align: middle;
 }
 
@@ -153,30 +197,10 @@
 .workshop-times-item span {
   display: block;
   text-align: center;
-  padding: 7px 2px;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.3;
-  color: #fff;
-  border-radius: 2px;
-}
-
-.workshop-status-item span.c1,
-.workshop-times-item span.c1 {
   white-space: nowrap;
-  background-image: linear-gradient(135deg, #2AFADF 10%, #4C83FF 100%);
-}
-
-.workshop-status-item span.c2,
-.workshop-times-item span.c2 {
-  white-space: nowrap;
-  background-image: linear-gradient(135deg, #FFD3A5 10%, #FD6585 100%);
-}
-
-.workshop-status-item span.c3,
-.workshop-times-item span.c3 {
-  white-space: nowrap;
-  background-image: linear-gradient(135deg, #EE9AE5 10%, #5961F9 100%);
 }
 
 .workshop-rate {
@@ -184,16 +208,119 @@
 }
 
 .chart-instance {
-  min-width: 155px;
   height: 100%;
-}
-
-.user-profile span,
-.user-profile i {
-  color: #fff;
 }
 
 .carousel-item .row {
   margin-right: 0;
   margin-left: 0;
+}
+
+.card {
+  position: relative;
+  border: solid 2px rgba(6, 104, 186, 0.5);
+  background-color: transparent;
+  background-color:rgba(18, 19, 49, 0.72);
+}
+
+.card .corner {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background-image: url(../images/bg-corner.png);
+  background-size: 100% 100%;
+}
+
+.card .corner.top-left {
+  top: -2px;
+  left: -2px;
+}
+
+.card .corner.top-right {
+  top: -2px;
+  right: -2px;
+  transform: rotate(90deg);
+}
+
+.card .corner.bottom-left {
+  bottom: -2px;
+  left: -2px;
+  transform: rotate(270deg);
+}
+
+.card .corner.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  transform: rotate(180deg);
+}
+
+.pcoded[theme-layout="vertical"][vertical-placement="left"][vertical-nav-type="expanded"][vertical-effect="shrink"] .navbar-text {
+  margin-left: 240px;
+}
+
+.pcoded[theme-layout="vertical"][vertical-placement="left"][vertical-nav-type="offcanvas"][vertical-effect="shrink"] .navbar-text {
+  margin-left: 0;
+}
+
+.pcoded-logo {
+  padding: 20px 70px 40px;
+}
+
+.pcoded-logo img {
+  width: 100%;
+}
+
+body{
+  background-image: url(../images/bg.jpg);
+  background-size:100% 100%;
+}
+
+.pcoded-inner-title{
+  height: 92px;
+  position: relative;
+  text-align: center;
+  font-size:24px;
+  padding-top:18px;
+  color: #00ffea;
+}
+.pcoded-inner-title span{
+  margin-left:5px;
+}
+.pcoded-inner-title:before,
+.pcoded-inner-title:after{
+  content:'';
+  display: block;
+  width:35%;
+  height:100%;
+  position: absolute;
+  top:0;
+  background-image: url(../images/bg-header-left.png);
+  background-size:100% 100%;
+}
+.pcoded-inner-title:before{
+  left:0;
+}
+.pcoded-inner-title:after{
+  right:0;
+  transform: rotateY(180deg);
+}
+.c1{
+  color: #58ec90;
+}
+.c2{
+  color: #b3ff50;
+}
+.c3{
+  color: #f6b84b;
+}
+
+.navbar-link a{
+	font-size: 16px;
+  color: #fff;
+  position: absolute;
+  bottom:20px;
+}
+
+.navbar-link{
+  position: relative;
 }
