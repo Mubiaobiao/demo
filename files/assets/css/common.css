@@ -102,42 +102,45 @@
   text-align: center;
   color: #00ffea;
   margin-bottom: 12px;
-  height:45px;
-  line-height:45px;
+  height: 45px;
+  line-height: 45px;
   background-image: url(../images/bg-title-middle.png);
   background-repeat: repeat-x;
-  background-size:1px 100%;
-  margin:0 40px;
+  background-size: 1px 100%;
+  margin: 0 40px;
   position: relative;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 
 }
-.workshop-item .workshop-title span{
+
+.workshop-item .workshop-title span {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
 }
+
 .workshop-item .workshop-title:before,
-.workshop-item .workshop-title:after{
-  content:'';
+.workshop-item .workshop-title:after {
+  content: '';
   display: block;
   position: absolute;
-  width:40px;
-  height:45px;
-  top:0;
+  width: 40px;
+  height: 45px;
+  top: 0;
 
   background-repeat: no-repeat;
-  background-size:auto 45px;
+  background-size: auto 45px;
 }
 
-.workshop-item .workshop-title:before{
+.workshop-item .workshop-title:before {
   background-image: url(../images/bg-title-left.png);
-  left:-37px;
+  left: -37px;
 }
-.workshop-item .workshop-title:after{
+
+.workshop-item .workshop-title:after {
   background-image: url(../images/bg-title-right.png);
-  right:-40px;
+  right: -40px;
 }
 
 .workshop-status {
@@ -148,7 +151,7 @@
 .workshop-times {
   width: 100%;
   table-layout: fixed;
-  background-color:#100f37;
+  background-color: #100f37;
 }
 
 .workshop-times {
@@ -220,7 +223,7 @@
   position: relative;
   border: solid 2px rgba(6, 104, 186, 0.5);
   background-color: transparent;
-  background-color:rgba(18, 19, 49, 0.72);
+  background-color: rgba(18, 19, 49, 0.72);
 }
 
 .card .corner {
@@ -270,57 +273,62 @@
   width: 100%;
 }
 
-body{
+body {
   background-image: url(../images/bg.jpg);
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
 
-.pcoded-inner-title{
+.pcoded-inner-title {
   height: 92px;
   position: relative;
   text-align: center;
-  font-size:24px;
-  padding-top:18px;
+  font-size: 24px;
+  padding-top: 18px;
   color: #00ffea;
 }
-.pcoded-inner-title span{
-  margin-left:5px;
+
+.pcoded-inner-title span {
+  margin-left: 5px;
 }
+
 .pcoded-inner-title:before,
-.pcoded-inner-title:after{
-  content:'';
+.pcoded-inner-title:after {
+  content: '';
   display: block;
-  width:35%;
-  height:100%;
+  width: 35%;
+  height: 100%;
   position: absolute;
-  top:0;
+  top: 0;
   background-image: url(../images/bg-header-left.png);
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
-.pcoded-inner-title:before{
-  left:0;
+
+.pcoded-inner-title:before {
+  left: 0;
 }
-.pcoded-inner-title:after{
-  right:0;
+
+.pcoded-inner-title:after {
+  right: 0;
   transform: rotateY(180deg);
 }
-.c1{
+
+.c1 {
   color: #58ec90;
 }
-.c2{
+
+.c2 {
   color: #b3ff50;
 }
-.c3{
+
+.c3 {
   color: #f6b84b;
 }
 
-.navbar-link a{
-	font-size: 16px;
+.navbar-link {
+  font-size: 16px;
   color: #fff;
   position: absolute;
-  bottom:20px;
-}
-
-.navbar-link{
-  position: relative;
+  bottom: 40px;
+  left: 30px;
+  z-index: 1000;
 }
