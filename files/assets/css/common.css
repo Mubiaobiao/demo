@@ -98,12 +98,12 @@
   height: 100%;
 }
 
-.workshop-item .workshop-title {
+.workshop-title {
   text-align: center;
   color: #00ffea;
   margin-bottom: 12px;
   height: 45px;
-  line-height: 45px;
+  line-height: 40px;
   background-image: url(../images/bg-title-middle.png);
   background-repeat: repeat-x;
   background-size: 1px 100%;
@@ -113,15 +113,15 @@
 
 }
 
-.workshop-item .workshop-title span {
+.workshop-title span {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
 }
 
-.workshop-item .workshop-title:before,
-.workshop-item .workshop-title:after {
+.workshop-title:before,
+.workshop-title:after {
   content: '';
   display: block;
   position: absolute;
@@ -133,12 +133,12 @@
   background-size: auto 45px;
 }
 
-.workshop-item .workshop-title:before {
+.workshop-title:before {
   background-image: url(../images/bg-title-left.png);
   left: -37px;
 }
 
-.workshop-item .workshop-title:after {
+.workshop-title:after {
   background-image: url(../images/bg-title-right.png);
   right: -40px;
 }
@@ -219,14 +219,14 @@
   margin-left: 0;
 }
 
-.card {
+.card.newStyle {
   position: relative;
   border: solid 2px rgba(6, 104, 186, 0.5);
   background-color: transparent;
   background-color: rgba(18, 19, 49, 0.72);
 }
 
-.card .corner {
+.card.newStyle .corner {
   width: 14px;
   height: 14px;
   position: absolute;
@@ -234,24 +234,24 @@
   background-size: 100% 100%;
 }
 
-.card .corner.top-left {
+.card.newStyle .corner.top-left {
   top: -2px;
   left: -2px;
 }
 
-.card .corner.top-right {
+.card.newStyle .corner.top-right {
   top: -2px;
   right: -2px;
   transform: rotate(90deg);
 }
 
-.card .corner.bottom-left {
+.card.newStyle .corner.bottom-left {
   bottom: -2px;
   left: -2px;
   transform: rotate(270deg);
 }
 
-.card .corner.bottom-right {
+.card.newStyle .corner.bottom-right {
   bottom: -2px;
   right: -2px;
   transform: rotate(180deg);
@@ -331,4 +331,44 @@ body {
   bottom: 40px;
   left: 30px;
   z-index: 1000;
+}
+
+.no-margin{
+  margin:0;
+}
+
+.workshop-header{
+  padding:20px 0;
+  text-align: center;
+}
+
+.workshop-header .workshop-title{
+  display: inline-block;
+  padding:0 50px;
+  margin:0;
+}
+
+.form-group.newStyle label{
+  color:#fff;
+}
+
+.form-group.newStyle .form-control{
+  border: solid 2px rgba(6, 104, 186, 0.5);
+  background-color: rgba(8, 82, 148, 0.72);
+  padding:6px 12px;
+  color:#fff;
+}
+
+.chart-bar-line,
+.chart-pie{
+  height:360px;
+}
+
+.chart-deliveries{
+  padding-top:35px;
+  height:400px;
+}
+
+.update-card{
+  cursor: pointer;
 }

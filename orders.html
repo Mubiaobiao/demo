@@ -1,0 +1,746 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Adminty - Premium Admin Template by Colorlib </title>
+  <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="#">
+  <meta name="keywords"
+    content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+  <meta name="author" content="#">
+  <!-- Favicon icon -->
+  <link rel="icon" href="./files/assets/images/favicon.ico" type="image/x-icon">
+  <!-- Google font-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  <!-- Required Fremwork -->
+  <link rel="stylesheet" type="text/css" href="./files/bower_components/bootstrap/css/bootstrap.min.css">
+  <!-- feather Awesome -->
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/feather/css/feather.css">
+  <!-- simple-line-icons -->
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/themify-icons/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/font-awesome/css/font-awesome.min.css">
+  <!-- Date-Dropper css -->
+  <link rel="stylesheet" type="text/css" href="./files/bower_components/datedropper/css/datedropper.min.css">
+  <!-- Style.css -->
+  <link rel="stylesheet" type="text/css" href="./files/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/css/common.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/css/jquery.mCustomScrollbar.css">
+  <script async="" src="./files/assets/js/echarts.min.js"></script>
+  <script src="./files/assets/js/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- Pre-loader start -->
+  <div class="theme-loader">
+    <div class="ball-scale">
+      <div class='contain'>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+        <div class="ring">
+          <div class="frame"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pre-loader end -->
+  <div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+      <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+          <nav class="pcoded-navbar">
+            <div class="pcoded-logo">
+              <img src="./files/assets/images/logo.png" alt="">
+            </div>
+            <div class="pcoded-inner-navbar main-menu">
+              <!-- <div class="pcoded-navigatio-lavel">Navigation</div> -->
+              <ul class="pcoded-item pcoded-left-item">
+                <li class="active">
+                  <a href="#">
+                    <span class="pcoded-micon"><i class="fa fa-newspaper-o"></i></span>
+                    <span class="pcoded-mtext">Workshop Overview</span>
+                  </a>
+                </li>
+                <li class="pcoded-hasmenu">
+                  <a href="#">
+                    <span class="pcoded-micon"><i class="ti-package"></i></span>
+                    <span class="pcoded-mtext">Delivery Statics</span>
+                  </a>
+                  <ul class="pcoded-submenu">
+                    <li class="">
+                      <a href="">
+                        <span class="pcoded-mtext">Delivery Statics per Month</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="">
+                        <span class="pcoded-mtext">Delivery Statics per Customer</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="">
+                  <a href="#">
+                    <span class="pcoded-micon"><i class="fa fa-bar-chart-o"></i></span>
+                    <span class="pcoded-mtext">Machine Utilisaction</span>
+                  </a>
+                </li>
+                <li class="pcoded-hasmenu">
+                  <a href="#">
+                    <span class="pcoded-micon"><i class="ti-check-box"></i></span>
+                    <span class="pcoded-mtext">Order Details</span>
+                  </a>
+                  <ul class="pcoded-submenu">
+                    <li class="">
+                      <a href="">
+                        <span class="pcoded-mtext">Order Statics per Month</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="">
+                        <span class="pcoded-mtext">Order Statics per Customer</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="">
+                  <a href="#">
+                    <span class="pcoded-micon"><i class="ti-notepad"></i></span>
+                    <span class="pcoded-mtext">Capacity Overview</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="#">
+                    <span class="pcoded-micon"><i class="ti-clipboard"></i></span>
+                    <span class="pcoded-mtext">Project Status</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a href="http://www.pro-plantool.com" class="navbar-link">
+              Support by:<br />
+              www.pro-plantool.com
+            </a>
+          </nav>
+          <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+              <div class="pcoded-inner-title">
+                <div style="position: relative;z-index: 100;">
+                  Tool Shop Digitalization Platform
+                  <span id="date"></span>
+                </div>
+              </div>
+              <div class="main-body">
+                <div class="page-wrapper">
+                  <div class="page-body">
+                    <div class="card newStyle no-margin" style="padding:28px 36px;">
+                      <div class="corner top-left"></div>
+                      <div class="corner top-right"></div>
+                      <div class="corner bottom-left"></div>
+                      <div class="corner bottom-right"></div>
+                      <div class="form-inline">
+                        <div class="form-group newStyle">
+                          <label>from</label>
+                          <input type="text" class="form-control mx-sm-3" placeholder="--年-月" id="startTime">
+                        </div>
+                        <div class="form-group newStyle">
+                          <label>to</label>
+                          <input type="text" class="form-control mx-sm-3" placeholder="--年-月" id="endTime">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="workshop-header">
+                      <p class="workshop-title">Order Statics per Month</p>
+                    </div>
+                    <div class="card newStyle" style="padding:28px 36px;">
+                      <div class="corner top-left"></div>
+                      <div class="corner top-right"></div>
+                      <div class="corner bottom-left"></div>
+                      <div class="corner bottom-right"></div>
+                      <div class="row no-margin">
+                        <div class="col-xl-3">
+                          <div class="card bg-c-yellow update-card no-margin" data-id="NewOrder">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white">200</h4>
+                                  <h6 class="text-white m-b-0">New Order</h6>
+                                </div>
+                                <div class="col-4 text-right"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                                    style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                                  <canvas id="update-chart-1"
+                                    style="display: block; height: 50px; width: 93px;"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <p class="text-white m-b-0"><i
+                                  class="feather icon-clock text-white f-14 m-r-10"></i>update:
+                                2:15 am</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-3">
+                          <div class="card bg-c-green update-card no-margin" data-id="PlanDelivery">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white">290</h4>
+                                  <h6 class="text-white m-b-0">Plan Delivery</h6>
+                                </div>
+                                <div class="col-4 text-right"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                                    style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                                  <canvas id="update-chart-2"
+                                    style="display: block; height: 50px; width: 93px;"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <p class="text-white m-b-0"><i
+                                  class="feather icon-clock text-white f-14 m-r-10"></i>update
+                                : 2:15 am</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-3">
+                          <div class="card bg-c-pink update-card no-margin" data-id="ActualDelivery">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white">145</h4>
+                                  <h6 class="text-white m-b-0">Actual Delivery</h6>
+                                </div>
+                                <div class="col-4 text-right"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                                    style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                                  <canvas id="update-chart-3"
+                                    style="display: block; height: 50px; width: 93px;"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <p class="text-white m-b-0"><i
+                                  class="feather icon-clock text-white f-14 m-r-10"></i>update
+                                : 2:15 am</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-3">
+                          <div class="card bg-c-lite-green update-card no-margin" data-id="DeliveryOnTimeRate">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white">500</h4>
+                                  <h6 class="text-white m-b-0">Delivery on time rate</h6>
+                                </div>
+                                <div class="col-4 text-right"><iframe class="chartjs-hidden-iframe" tabindex="-1"
+                                    style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                                  <canvas id="update-chart-4"
+                                    style="display: block; height: 50px; width: 93px;"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                              <p class="text-white m-b-0"><i
+                                  class="feather icon-clock text-white f-14 m-r-10"></i>update
+                                : 2:15 am</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chartBox">
+                      <div class="row" style="margin:0 -6px" id="NewOrder">
+                        <div class="col-xl-8">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-bar-line"></div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-pie"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin:0 -6px" id="PlanDelivery">
+                        <div class="col-xl-8">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-bar-line"></div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-pie"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin:0 -6px" id="ActualDelivery">
+                        <div class="col-xl-8">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-bar-line"></div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-pie"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin:0 -6px" id="DeliveryOnTimeRate">
+                        <div class="col-xl-8">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-bar-line"></div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4">
+                          <div class="card newStyle">
+                            <div class="corner top-left"></div>
+                            <div class="corner top-right"></div>
+                            <div class="corner bottom-left"></div>
+                            <div class="corner bottom-right"></div>
+                            <div class="chart-pie"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 10]>
+    <div class="ie-warning">
+        <h1>Warning!!</h1>
+        <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+        <div class="iew-container">
+            <ul class="iew-download">
+                <li>
+                    <a href="http://www.google.com/chrome/">
+                        <img src="./files/assets/images/browser/chrome.png" alt="Chrome">
+                        <div>Chrome</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.mozilla.org/en-US/firefox/new/">
+                        <img src="./files/assets/images/browser/firefox.png" alt="Firefox">
+                        <div>Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com">
+                        <img src="./files/assets/images/browser/opera.png" alt="Opera">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.apple.com/safari/">
+                        <img src="./files/assets/images/browser/safari.png" alt="Safari">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                        <img src="./files/assets/images/browser/ie.png" alt="">
+                        <div>IE (9 & above)</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>Sorry for the inconvenience!</p>
+    </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="./files/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./files/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="./files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="./files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="./files/bower_components/modernizr/js/modernizr.js"></script>
+    <!-- Chart js -->
+    <script src="./files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="./files/assets/js/SmoothScroll.js"></script>
+    <script src="./files/assets/js/pcoded.min.js"></script>
+    <!-- custom js -->
+    <script src="./files/assets/js/vartical-layout.min.js"></script>
+    <script type="text/javascript" src="./files/assets/js/script.min.js"></script>
+    <!-- Date-dropper js -->
+    <script type="text/javascript" src="./files/bower_components/datedropper/js/datedropper.min.js"></script>
+    <!-- Chart js -->
+    <script type="text/javascript" src="./files/bower_components/chart.js/js/Chart.js"></script>
+    <script type="text/babel">
+      function getDate() {
+    var _monthMapper = {
+            0: 'Jan',
+            1: 'Feb',
+            2: 'Mar',
+            3: 'Apr',
+            4: 'May',
+            5: 'Jun',
+            6: 'Jul',
+            7: 'Aug',
+            8: 'Sept',
+            9: 'Oct',
+            10: 'Nov',
+            11: 'Dec'
+        },
+        _date = new Date(),
+        _day = _date.getDate(),
+        _month = _date.getMonth(),
+        _year = _date.getFullYear();
+    return _day + ' - ' + _monthMapper[_month] + ' - ' + _year;
+}
+
+function initBarLine(instance) {
+    var dom = instance,
+        myChart = echarts.init(dom),
+        months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul','Aug','Sep','Oct','Nov','Dec'],
+        lj = months.map(()=>Math.floor(Math.random() * 1000)),
+        xm = months.map(()=>Math.floor(Math.random() * 1000)),
+        option = {
+            color:['#0ac282','#fe5d70'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            xAxis: {
+                type: 'category',
+                axisLabel:{
+                  color:'#fff',
+                },
+                splitLine:{
+                  show:false
+                },
+                axisLine:{
+                  lineStyle:{
+                    color:'#fff'
+                  }
+                },
+                axisTick:{
+                  show:false
+                },
+                data: months
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel:{
+                  color:'#fff'
+                },
+                axisLine:{
+                  lineStyle:{
+                    color:'#fff'
+                  }
+                },
+                axisTick:{
+                  show:false
+                },
+                splitLine:{
+                  show:false
+                },
+            },
+            series: [{
+                    name: '新模',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideTop'
+                        }
+                    },
+                    barWidth: 45,
+                    itemStyle:{
+                      shadowBlur: 10,
+                      shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    data: xm
+                },
+                {
+                    name: '零件',
+                    type: 'bar',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideTop'
+                        }
+                    },
+                    barWidth: 45,
+                    itemStyle:{
+                      shadowBlur: 10,
+                      shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    data: lj
+                },
+                {
+                    name: 'New Order',
+                    type: 'line',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true
+                        }
+                    },
+                    itemStyle:{
+                      color:'#fff'
+                    },
+                    symbol:'circle',
+                    symbolSize:12,
+                    data: months.map((item,index)=>lj[index] + xm[index])
+                }
+            ]
+        };
+        myChart.setOption(option, true);
+        myChart.on('click',function(param){
+          if(param.seriesType === 'line'){
+            let _dom = $(dom).parents('.col-xl-8').next().find('.chart-pie')[0];
+            initPie(_dom);
+          }
+        });
+        $(window).bind('resize', function () {
+            myChart.resize();
+        });
+    }
+
+    function initPie(instance){
+      var dom = instance,
+        myChart = echarts.init(dom),
+        option = {
+            color:['#0ac282','#fe5d70'],
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'horizontal',
+                icon:'rect',
+                itemWidth:14,
+                itemHeight:14,
+                borderRadius:3,
+                top:15,
+                right:25,
+                textStyle:{
+                  color:'#fff'
+                },
+                data: ['新模','零件']
+            },
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius : '55%',
+                    center: ['50%', '55%'],
+                    data:[
+                        {value:Math.floor(Math.random() * 100), name:'新模'},
+                        {value:Math.floor(Math.random() * 100), name:'零件'}
+                    ],
+                    label:{
+                      normal:{
+                        color:'#fff'
+                      }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        myChart.setOption(option, true);
+        $(window).bind('resize', function () {
+            myChart.resize();
+        });
+    }
+
+    function valincome(a, b, f) {
+        if (f == null) {
+            f = "rgba(0,0,0,0)";
+        }
+        return {
+            labels: ["1", "2", "3", "4", "5"],
+            datasets: [{
+                label: "",
+                borderColor: a,
+                borderWidth: 0,
+                hitRadius: 30,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointBorderWidth: 2,
+                pointHoverBorderWidth: 12,
+                pointBackgroundColor: Chart.helpers.color("#000000").alpha(0).rgbString(),
+                pointBorderColor: a,
+                pointHoverBackgroundColor: a,
+                pointHoverBorderColor: Chart.helpers.color("#000000").alpha(.1).rgbString(),
+                fill: true,
+                backgroundColor: Chart.helpers.color(f).alpha(1).rgbString(),
+                data: b,
+            }]
+        };
+    }
+
+    function valincomebuildoption() {
+        return {
+            maintainAspectRatio: false,
+            title: {
+                display: false,
+            },
+            tooltips: {
+                enabled: false,
+            },
+            legend: {
+                display: false
+            },
+            hover: {
+                mode: 'index'
+            },
+            scales: {
+                xAxes: [{
+                    display: false,
+                    gridLines: false,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Month'
+                    }
+                }],
+                yAxes: [{
+                    display: false,
+                    gridLines: false,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Value'
+                    },
+                    ticks: {
+                        min: 1,
+                    }
+                }]
+            },
+            elements: {
+                point: {
+                    radius: 4,
+                    borderWidth: 12
+                }
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 0,
+                    top: 15,
+                    bottom: 0
+                }
+            }
+        };
+    }
+
+    $(function () {
+        $('#date').text(getDate());
+        $("#startTime,#endTime").dateDropper({
+            lang: 'zh',
+            format: 'Y-m'
+        });
+        $.map($('.chart-bar-line'), function (item) {
+          initBarLine(item);
+        });
+        var ctx = document.getElementById('update-chart-1').getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: valincome('#fff', [25, 30, 20, 15, 20], '#fff'),
+            options: valincomebuildoption(),
+        });
+        var ctx = document.getElementById('update-chart-2').getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: valincome('#fff', [10, 30, 20, 15, 30], '#fff'),
+            options: valincomebuildoption(),
+        });
+        var ctx = document.getElementById('update-chart-3').getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: valincome('#fff', [25, 10, 20, 15, 20], '#fff'),
+            options: valincomebuildoption(),
+        });
+        var ctx = document.getElementById('update-chart-4').getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: valincome('#fff', [25, 30, 20, 15, 10], '#fff'),
+            options: valincomebuildoption(),
+        });
+    });
+    </script>
+</body>
+
+</html>
