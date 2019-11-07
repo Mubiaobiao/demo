@@ -739,6 +739,18 @@ function initBarLine(instance) {
             data: valincome('#fff', [25, 30, 20, 15, 10], '#fff'),
             options: valincomebuildoption(),
         });
+        function swapDom(dom1, dom2) {
+          let tempDiv = document.createElement('div')
+          dom1.parentNode.insertBefore(tempDiv, dom1)
+          dom2.parentNode.insertBefore(dom1, dom2)
+          tempDiv.parentNode.insertBefore(dom2, tempDiv)
+          tempDiv.parentNode.removeChild(tempDiv)
+        }
+        $('.update-card').bind('click', function(){
+          let _id = $(this).data('id'),
+            _firstChart = $('.chartBox .row:eq(0)');
+            swapDom(_firstChart[0], $('#'+ _id)[0]);
+        });
     });
     </script>
 </body>
