@@ -364,7 +364,8 @@ body {
   height:360px;
 }
 
-.chart-deliveries{
+.chart-deliveries,
+.chart-utilisaction{
   padding-top:35px;
   height:400px;
 }
