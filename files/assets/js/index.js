@@ -19,6 +19,7 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
+  gaugeValue: 50
 }, {
   imgUrl: './files/images/machine01.jpeg',
   title1: 'CNC Machine 1',
@@ -40,6 +41,7 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
+  gaugeValue: 30
 }, {
   imgUrl: './files/images/machine01.jpeg',
   title1: 'CNC Machine 1',
@@ -61,6 +63,7 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
+  gaugeValue: 10
 }, {
   imgUrl: './files/images/machine01.jpeg',
   title1: 'CNC Machine 1',
@@ -82,6 +85,7 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
+  gaugeValue: 90
 }, {
   imgUrl: './files/images/machine01.jpeg',
   title1: 'CNC Machine 1',
@@ -103,6 +107,7 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
+  gaugeValue: 99
 }, {
   imgUrl: './files/images/machine01.jpeg',
   title1: 'CNC Machine 1',
@@ -124,6 +129,7 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
+  gaugeValue: 24
 }, {
   imgUrl: './files/images/machine01.jpeg',
   title1: 'CNC Machine 1',
@@ -145,6 +151,7 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
+  gaugeValue: 90
 }, {
   imgUrl: './files/images/machine01.jpeg',
   title1: 'CNC Machine 1',
@@ -166,50 +173,9 @@ var _data = [{
   data15: '22 Hrs',
   data16: '&nbsp;',
   data17: '0',
-}, {
-  imgUrl: './files/images/machine01.jpeg',
-  title1: 'CNC Machine 1',
-  title2: 'Machine Static(last 1 week)',
-  data1: 'P17156',
-  data2: '07 15:09',
-  data3: 'P17156',
-  data4: '07 15:55',
-  data5: '&nbsp;',
-  data6: '0',
-  data7: '&nbsp;',
-  data8: '0',
-  data9: '&nbsp;',
-  data10: '0',
-  data11: '&nbsp;',
-  data12: '0',
-  data13: '20 Hrs',
-  data14: '2 Hrs',
-  data15: '22 Hrs',
-  data16: '&nbsp;',
-  data17: '0',
-}, {
-  imgUrl: './files/images/machine01.jpeg',
-  title1: 'CNC Machine 1',
-  title2: 'Machine Static(last 1 week)',
-  data1: 'P17156',
-  data2: '07 15:09',
-  data3: 'P17156',
-  data4: '07 15:55',
-  data5: '&nbsp;',
-  data6: '0',
-  data7: '&nbsp;',
-  data8: '0',
-  data9: '&nbsp;',
-  data10: '0',
-  data11: '&nbsp;',
-  data12: '0',
-  data13: '20 Hrs',
-  data14: '2 Hrs',
-  data15: '22 Hrs',
-  data16: '&nbsp;',
-  data17: '0',
-}]
-function initRate(instance) {
+  gaugeValue: 102
+}];
+function initRate(instance, data) {
   var dom = instance,
     myChart = echarts.init(dom),
     option = {
@@ -268,7 +234,7 @@ function initRate(instance) {
               // width: 15
             }
           },
-          data: [{ value: 50, name: '机台' }]
+          data: [{ value: data, name: '机台' }]
         }
       ]
     };
@@ -330,7 +296,7 @@ function initList() {
                           <img src="${item.imgUrl}" alt="">
                       </div>
                       <p class="workshop-title"><span>${item.title1}</span></p>
-                      <div class="workshop-rate">
+                      <div class="workshop-rate" data-value="${item.gaugeValue}">
                           <div class="chart-instance"></div>
                       </div>
                   </div>
@@ -407,7 +373,8 @@ function initList() {
   $('#myCarousel').carousel()
   var _chartInstances = $('.chart-instance');
   $.map(_chartInstances, function (item) {
-    initRate(item);
+    console.log($(item));
+    initRate(item, $(item).parent().data('value'));
   });
 }
 $(function () {
@@ -418,5 +385,5 @@ $(function () {
   $('#date').text(getDate());
   var timeInterval = setInterval(function () {
     location.reload();
-  }, 6000 * 2);
+  }, 60000 * 2);
 });
