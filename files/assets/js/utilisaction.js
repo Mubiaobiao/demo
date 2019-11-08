@@ -31,6 +31,7 @@ function initLine(instance) {
       return _week;
     })(),
     option = {
+      color: ['#00adef'],
       xAxis: {
         type: 'category',
         axisLabel: {

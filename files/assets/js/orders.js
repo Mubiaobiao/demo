@@ -27,7 +27,7 @@ function initBarLine(instance) {
     lj = months.map(() => Math.floor(Math.random() * 1000)),
     xm = months.map(() => Math.floor(Math.random() * 1000)),
     option = {
-      color: ['#0ac282', '#fe5d70'],
+      color: ['#00adef', '#66cc9a'],
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -154,7 +154,7 @@ function initPie(instance) {
   var dom = instance,
     myChart = echarts.init(dom),
     option = {
-      color: ['#0ac282', '#fe5d70'],
+      color: ['#00adef', '#66cc9a'],
       tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b} : {c} ({d}%)"
