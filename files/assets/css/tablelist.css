@@ -1,0 +1,195 @@
+.tl-header {
+    width: 100%;
+    position: relative;
+    border: solid 2px rgba(6, 104, 186, 0.5);
+    margin-bottom: 30px;
+    padding: 20px 15px;
+}
+.tl-header .form-inline .form-group {
+    margin-right: 5px;
+}
+.tl-header .form-group.newStyle .form-control {
+    width: 100px;
+    margin: 0 5px!important;
+    border: solid 2px rgba(6, 104, 186, 0.5);
+    background-image: linear-gradient(
+		#100f37, 
+		#100f37), 
+	linear-gradient(
+		#121331, 
+		#121331);
+	background-blend-mode: color-dodge, 
+        normal;
+    color: #f6b84b;
+}
+.tl-header .form-group.newStyle label {
+    color: #00ffea;
+    font-weight: bold;
+}
+.tl-header .workshop-title {
+    display: inline-block;
+    width: 15%;
+    min-width: 100px;
+    margin-bottom: 0;
+    margin: 0px 60px;
+    font-weight: bold;
+}
+.tl-content {
+    width: 100%;
+    position: relative;
+    border: solid 2px rgba(6, 104, 186, 0.5);
+}
+.tl-content .corner, .tl-header .corner {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    background-image: url(../images/bg-corner.png);
+    background-size: 100% 100%;
+}
+.tl-content .corner.top-left, .tl-header .corner.top-left {
+    top: -2px;
+    left: -2px;
+}
+
+.tl-content .corner.top-right, .tl-header .corner.top-right {
+    top: -2px;
+    right: -2px;
+    transform: rotate(90deg);
+}
+
+.tl-content .corner.bottom-left, .tl-header .corner.bottom-left {
+    bottom: -2px;
+    left: -2px;
+    transform: rotate(270deg);
+}
+
+.tl-content .corner.bottom-right, .tl-header .corner.bottom-right {
+    bottom: -2px;
+    right: -2px;
+    transform: rotate(180deg);
+}
+.tl-content-l {
+    width: 100%;
+}
+.tl-content-l .tl-table {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+.tl-content-l .tl-table tr td {
+    color: #00ffea;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: none;
+}
+.tl-content-l .tl-table tr td:first-child , .tl-content-r .tl-table tr td:first-child {
+    border-left: none;
+}
+.tl-content-l .tl-table tr td:last-child , .tl-content-r .tl-table tr td:last-child {
+    border-right: none;
+}
+.tl-content-r {
+    width: 100%;
+    height: 594px;
+    overflow: auto;
+}
+.tl-content-r .tl-table {
+    border: none;
+}
+.tl-content-r .tl-table tr td:first-child {
+    color: #58ec90;
+}
+.tl-content-r .tl-table tr:first-child td {
+    border-top: none;
+}
+.tl-content-r .tl-table tr:last-child td{
+    border-bottom: none;
+}
+.tl-table {
+    width: 100%;
+    table-layout: fixed;
+    border: solid 2px rgba(6, 104, 186, 0.5);
+}
+.tl-table tr td {
+    height: 35px;
+    min-height: 35px;
+    padding: 6px 5px;
+    vertical-align: middle;
+    color: #f6b84b;
+    border: solid 2px rgba(6, 104, 186, 0.5);
+    margin-left: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tl-footer {
+    margin-top: 2%;
+    text-align: right;
+}
+.tl-footer .workshop-title {
+    display: inline-block;
+    width: 15%;
+    min-width: 100px;
+}
+
+
+.progress {
+    float: left;
+    width: 100%;
+    position: relative;
+    height: 1rem;
+    overflow: hidden;
+    font-size: 0.703125rem;
+    background-color: #f6f6f6;
+    border-radius: 3px;
+}
+.progress-bar-animated {
+    -webkit-animation: progress-bar-stripes 1s linear infinite;
+    animation: progress-bar-stripes 1s linear infinite;
+}
+.progress-bar-striped {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) !important;
+    background-size: 1rem 1rem;
+}
+.bg-info-gradient {
+    background-color: rgba(34,192,200);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(34,192,200)), color-stop(1, rgb(30,99,195)) );
+    background-image: -moz-linear-gradient( center bottom, rgb(0, 242, 254) 37%, rgb(30,99,195) 69% );
+    -webkit-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+    box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(51,51,204,0.4) !important;
+}
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    transition: width 0.6s ease;
+}
+.progress-num {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 5px;
+}
+.complete .bg-info-gradient {
+    background-color: rgb(251,176,52);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(241,211,19)), color-stop(1, rgb(251,176,52)) );
+    background-image: -moz-linear-gradient( center bottom, rgb(241,211,19) 37%, rgb(251,176,52) 69% );
+    -webkit-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+    box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(98,58,162,0.4) !important;
+}
+.complete .progress-num {
+    color: rgb(34,192,200);
+}
