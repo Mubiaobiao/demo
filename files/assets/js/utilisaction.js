@@ -20,7 +20,7 @@ function getDate() {
   return _day + ' - ' + _monthMapper[_month] + ' - ' + _year;
 }
 
-function initLine(instance) {
+function initLine(instance, title, barColor, ) {
   var dom = instance,
     myChart = echarts.init(dom),
     xData = (function () {
@@ -31,7 +31,22 @@ function initLine(instance) {
       return _week;
     })(),
     option = {
-      color: ['#00adef'],
+      title: {
+        text: title,
+        textStyle: {
+          color: '#fff',
+          fontSize: 24
+        },
+        left: 80
+      },
+      color: [barColor],
+      legend: {
+        show: true,
+        right: 20,
+        textStyle: {
+          color: '#fff'
+        }
+      },
       xAxis: {
         type: 'category',
         axisLabel: {
@@ -68,6 +83,7 @@ function initLine(instance) {
         },
       },
       series: [{
+        name: 'utiliscation',
         type: 'bar',
         barWidth: 45,
         itemStyle: {
@@ -75,8 +91,7 @@ function initLine(instance) {
           shadowColor: 'rgba(0, 0, 0, 0.5)'
         },
         data: xData.map(() => Math.floor(Math.random() * 1000))
-      }
-      ]
+      }]
     };
   myChart.setOption(option, true);
   $(window).bind('resize', function () {
@@ -92,14 +107,28 @@ function swapDom(dom1, dom2) {
   tempDiv.parentNode.removeChild(tempDiv)
 }
 
+function coordYear() {
+  var _firstYear = (new Date()).getFullYear() - 5,
+    _years = [],
+    _temp = '';
+  for (let i = 0; i <= 10; i++) {
+    _years.push({
+      name: _firstYear + i + '年',
+      value: _firstYear + i
+    });
+  }
+  $.map(_years, function (item) {
+    _temp += '<option value="' + item.value + '">' + item.name + '</option>';
+  });
+  $('#yearSelect').html(_temp);
+}
+
 $(function () {
   $('#date').text(getDate());
-  $("#startTime,#endTime").dateDropper({
-    lang: 'zh',
-    format: 'Y-m'
-  });
-  $.map($('.chart-utilisaction'), function (item) {
-    initLine(item);
+  coordYear();
+  var _colorList = ['#2c7be5', '#2c7be5', '#2c7be5', '#2c7be5', '#2c7be5'];
+  $.map($('.chart-utilisaction'), function (item, index) {
+    initLine(item, $(item).parent().attr('id'), _colorList[index]);
   });
   $('.update-card').bind('click', function () {
     let _id = $(this).data('id'),

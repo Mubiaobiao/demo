@@ -90,8 +90,8 @@
             <div class="pcoded-inner-navbar main-menu">
               <!-- <div class="pcoded-navigatio-lavel">Navigation</div> -->
               <ul class="pcoded-item pcoded-left-item">
-                <li class="active">
-                  <a href="#">
+                <li class="">
+                  <a href="./index.html">
                     <span class="pcoded-micon"><i class="fa fa-newspaper-o"></i></span>
                     <span class="pcoded-mtext">Workshop Overview</span>
                   </a>
@@ -103,7 +103,7 @@
                   </a>
                   <ul class="pcoded-submenu">
                     <li class="">
-                      <a href="">
+                      <a href="./deliveries.html">
                         <span class="pcoded-mtext">Delivery Statics per Month</span>
                       </a>
                     </li>
@@ -114,14 +114,14 @@
                     </li>
                   </ul>
                 </li>
-                <li class="">
-                  <a href="#">
+                <li class="active">
+                  <a href="./utilisaction.html">
                     <span class="pcoded-micon"><i class="fa fa-bar-chart-o"></i></span>
                     <span class="pcoded-mtext">Machine Utilisaction</span>
                   </a>
                 </li>
                 <li class="pcoded-hasmenu">
-                  <a href="#">
+                  <a href="./orders.html">
                     <span class="pcoded-micon"><i class="ti-check-box"></i></span>
                     <span class="pcoded-mtext">Order Details</span>
                   </a>
@@ -139,13 +139,13 @@
                   </ul>
                 </li>
                 <li class="">
-                  <a href="#">
+                  <a href="./">
                     <span class="pcoded-micon"><i class="ti-notepad"></i></span>
                     <span class="pcoded-mtext">Capacity Overview</span>
                   </a>
                 </li>
                 <li class="">
-                  <a href="#">
+                  <a href="./tablelist.html">
                     <span class="pcoded-micon"><i class="ti-clipboard"></i></span>
                     <span class="pcoded-mtext">Project Status</span>
                   </a>
@@ -174,14 +174,16 @@
                       <div class="corner bottom-left"></div>
                       <div class="corner bottom-right"></div>
                       <div class="form-inline">
-                        <div class="form-group newStyle">
-                          <label>from</label>
-                          <input type="text" class="form-control mx-sm-3" placeholder="--年-月" id="startTime">
+                        <div class="form-group newStyle" style="margin-right:10px;">
+                          <select class="form-control" id="yearSelect"></select>
                         </div>
-                        <div class="form-group newStyle">
-                          <label>to</label>
-                          <input type="text" class="form-control mx-sm-3" placeholder="--年-月" id="endTime">
+                        <div class="form-group newStyle" style="margin-right:10px;">
+                          <select class="form-control" id="yearPart">
+                            <option value="">上半年</option>
+                            <option value="">下半年</option>
+                          </select>
                         </div>
+                        <p class="workshop-title buttonStyle">submit</p>
                       </div>
                     </div>
                     <div class="workshop-header">
@@ -199,7 +201,7 @@
                               <div class="row align-items-end">
                                 <div class="col-8">
                                   <h4 class="text-white">9500</h4>
-                                    <h6 class="text-white m-b-0">ALL</h6>
+                                  <h6 class="text-white m-b-0">ALL</h6>
                                 </div>
                                 <div class="col-4 text-right">
                                   <i class="fa fa-server" style="font-size:40px;"></i>
@@ -219,7 +221,7 @@
                               <div class="row align-items-end">
                                 <div class="col-8">
                                   <h4 class="text-white">53450</h4>
-                                    <h6 class="text-white m-b-0">CNC</h6>
+                                  <h6 class="text-white m-b-0">CNC</h6>
                                 </div>
                                 <div class="col-4 text-right">
                                   <i class="fa fa-server" style="font-size:40px;"></i>
@@ -239,7 +241,7 @@
                               <div class="row align-items-end">
                                 <div class="col-8">
                                   <h4 class="text-white">22000</h4>
-                                    <h6 class="text-white m-b-0">EDM</h6>
+                                  <h6 class="text-white m-b-0">EDM</h6>
                                 </div>
                                 <div class="col-4 text-right">
                                   <i class="fa fa-server" style="font-size:40px;"></i>
@@ -259,7 +261,7 @@
                               <div class="row align-items-end">
                                 <div class="col-8">
                                   <h4 class="text-white">1345</h4>
-                                    <h6 class="text-white m-b-0">WEDM</h6>
+                                  <h6 class="text-white m-b-0">WEDM</h6>
                                 </div>
                                 <div class="col-4 text-right">
                                   <i class="fa fa-server" style="font-size:40px;"></i>
@@ -279,7 +281,7 @@
                               <div class="row align-items-end">
                                 <div class="col-8">
                                   <h4 class="text-white">5300</h4>
-                                    <h6 class="text-white m-b-0">Other</h6>
+                                  <h6 class="text-white m-b-0">Other</h6>
                                 </div>
                                 <div class="col-4 text-right">
                                   <i class="fa fa-server" style="font-size:40px;"></i>

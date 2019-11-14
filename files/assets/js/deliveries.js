@@ -20,7 +20,7 @@ function getDate() {
   return _day + ' - ' + _monthMapper[_month] + ' - ' + _year;
 }
 
-function initLine(instance) {
+function initLine(instance, title) {
   var dom = instance,
     myChart = echarts.init(dom),
     xData = (function () {
@@ -32,7 +32,22 @@ function initLine(instance) {
     })(),
     option = {
       grid: {
-        top: 40
+        top: 80
+      },
+      title: {
+        text: title,
+        textStyle: {
+          color: '#fff',
+          fontSize: 24
+        },
+        left: 80
+      },
+      legend: {
+        show: true,
+        right: 30,
+        textStyle: {
+          color: '#fff'
+        }
       },
       xAxis: {
         type: 'category',
@@ -83,7 +98,7 @@ function initLine(instance) {
         textStyle: {
           color: '#fff'
         },
-        top: 'top',
+        top: 48,
         handleStyle: {
           color: '#fff',
           shadowBlur: 3,
@@ -94,6 +109,7 @@ function initLine(instance) {
       }],
       series: [
         {
+          name:'deliveries',
           type: 'line',
           smooth: true,
           symbol: 'none',
@@ -101,6 +117,7 @@ function initLine(instance) {
           itemStyle: {
             color: 'rgb(255, 70, 131)'
           },
+          areaStyle: {normal: {}},
           data: xData.map(() => Math.floor(Math.random() * 10000))
         }
       ]
@@ -126,7 +143,7 @@ $(function () {
     format: 'Y-m'
   });
   $.map($('.chart-deliveries'), function (item) {
-    initLine(item);
+    initLine(item, $(item).parent().attr('id'));
   });
   $('.update-card').bind('click', function () {
     let _id = $(this).data('id'),

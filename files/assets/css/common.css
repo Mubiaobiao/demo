@@ -112,6 +112,12 @@
   margin-bottom: 10px;
 
 }
+.workshop-title.buttonStyle{
+  display: inline-block;
+  cursor: pointer;
+  margin:0 0 0 40px;
+  padding:0 12px;
+}
 
 .workshop-title span {
   white-space: nowrap;
@@ -357,6 +363,7 @@ body {
   background-color: rgba(8, 82, 148, 0.72);
   padding:6px 12px;
   color:#fff;
+  min-width:120px;
 }
 
 .chart-bar-line,

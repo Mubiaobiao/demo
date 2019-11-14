@@ -20,18 +20,36 @@ function getDate() {
   return _day + ' - ' + _monthMapper[_month] + ' - ' + _year;
 }
 
-function initBarLine(instance) {
+function initBarLine(instance, xData, data) {
   var dom = instance,
     myChart = echarts.init(dom),
-    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    lj = months.map(() => Math.floor(Math.random() * 1000)),
-    xm = months.map(() => Math.floor(Math.random() * 1000)),
     option = {
-      color: ['#00adef', '#66cc9a'],
+      title: {
+        text: data.title,
+        textStyle: {
+          color: '#fff',
+          fontSize: 24
+        },
+        top: 20,
+        left: 80
+      },
+      color: ['#a1a3ff', '#55a1ff'],
       tooltip: {
         trigger: 'axis',
         axisPointer: {
           type: 'shadow'
+        }
+      },
+      grid: {
+        top: 80,
+        bottom: 50
+      },
+      legend: {
+        show: true,
+        right: 20,
+        top: 20,
+        textStyle: {
+          color: '#fff'
         }
       },
       xAxis: {
@@ -50,7 +68,8 @@ function initBarLine(instance) {
         axisTick: {
           show: false
         },
-        data: months
+        triggerEvent: true,
+        data: xData
       },
       yAxis: [{
         type: 'value',
@@ -67,32 +86,17 @@ function initBarLine(instance) {
         },
         splitLine: {
           show: false
-        },
-      }, {
-        type: 'value',
-        axisLabel: {
-          color: '#fff'
-        },
-        axisLine: {
-          lineStyle: {
-            color: '#fff'
-          }
-        },
-        axisTick: {
-          show: false
-        },
-        splitLine: {
-          show: false
-        },
+        }
       }],
       series: [{
-        name: '新模',
+        name: 'New Mold',
         type: 'bar',
         stack: '总量',
         label: {
           normal: {
             show: true,
-            position: 'insideTop'
+            color: '#fff',
+            position: 'insideBottom'
           }
         },
         barWidth: 45,
@@ -100,61 +104,63 @@ function initBarLine(instance) {
           shadowBlur: 10,
           shadowColor: 'rgba(0, 0, 0, 0.5)'
         },
-        data: xm
+        yAxisIndex: 0,
+        data: data.newMold
       },
       {
-        name: '零件',
+        name: 'Parts',
         type: 'bar',
         stack: '总量',
         label: {
           normal: {
             show: true,
+            color: '#fff',
             position: 'insideTop'
           }
         },
+        yAxisIndex: 0,
         barWidth: 45,
         itemStyle: {
           shadowBlur: 10,
           shadowColor: 'rgba(0, 0, 0, 0.5)'
         },
-        data: lj
+        data: data.parts
       },
       {
-        name: 'New Order',
+        name: 'All',
         type: 'line',
-        stack: '总量',
         label: {
           normal: {
             show: true
           }
         },
-        yAxisIndex: 1,
+        smooth: true,
+        yAxisIndex: 0,
         itemStyle: {
           color: '#fff'
         },
         symbol: 'circle',
         symbolSize: 12,
-        data: months.map((item, index) => lj[index] + xm[index])
-      }
-      ]
+        data: data.all
+      }]
     };
   myChart.setOption(option, true);
-  myChart.on('click', function (param) {
-    if (param.seriesType === 'line') {
-      let _dom = $(dom).parents('.col-xl-8').next().find('.chart-pie')[0];
-      initPie(_dom);
-    }
+  myChart.on('mouseover', function (param, a) {
+    let _index = xData.indexOf(param.name);
+    let _dom = $(dom).parents('.col-xl-8').next().find('.chart-pie')[0];
+    initPie(_dom, { newMold: data.newMold[_index], parts: data.parts[_index] });
   });
   $(window).bind('resize', function () {
     myChart.resize();
   });
+  initPie($(dom).parents('.col-xl-8').next().find('.chart-pie')[0], { newMold: data.newMold[0], parts: data.parts[0] });
 }
 
-function initPie(instance) {
+function initPie(instance, data) {
   var dom = instance,
     myChart = echarts.init(dom),
     option = {
-      color: ['#00adef', '#66cc9a'],
+      color: ['#a1a3ff', '#55a1ff'],
       tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b} : {c} ({d}%)"
@@ -170,7 +176,7 @@ function initPie(instance) {
         textStyle: {
           color: '#fff'
         },
-        data: ['新模', '零件']
+        data: ['New Mold', 'Parts']
       },
       series: [
         {
@@ -178,8 +184,8 @@ function initPie(instance) {
           radius: '55%',
           center: ['50%', '55%'],
           data: [
-            { value: Math.floor(Math.random() * 100), name: '新模' },
-            { value: Math.floor(Math.random() * 100), name: '零件' }
+            { value: data.newMold, name: 'New Mold' },
+            { value: data.parts, name: 'Parts' }
           ],
           label: {
             normal: {
@@ -287,8 +293,24 @@ $(function () {
     lang: 'zh',
     format: 'Y-m'
   });
-  $.map($('.chart-bar-line'), function (item) {
-    initBarLine(item);
+  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    _dataList = [],
+    _newMold = 0,
+    _parts = 0,
+    _chartList = ['New Order', 'Plan Delivery', 'Actual Delivery', 'Delivery on time rate'];
+  for (let i = 0; i < _chartList.length; i++) {
+    _newMold = months.map(item => Math.floor(Math.random() * 1000));
+    _parts = months.map(item => Math.floor(Math.random() * 1000));
+    _dataList.push({
+      title: _chartList[i],
+      newMold: _newMold,
+      parts: _parts,
+      all: months.map((item, index) => _newMold[index] + _parts[index])
+    });
+  }
+  $.map($('.chart-bar-line'), function (item, index) {
+    console.log(_dataList[index]);
+    initBarLine(item, months, _dataList[index]);
   });
   var ctx = document.getElementById('update-chart-1').getContext("2d");
   var myChart = new Chart(ctx, {

@@ -179,64 +179,39 @@ function initRate(instance, data) {
   var dom = instance,
     myChart = echarts.init(dom),
     option = {
-      grid: {
-        top: '-10',
-        width: '100%',
-        height: '100%'
-      },
       tooltip: {
         show: false
       },
-      toolbox: {
-        show: false
-      },
-      series: [
-        {
-          name: '',
-          type: 'gauge',
-          title: {
-            fontSize: 14,
-            offsetCenter: [0, 30],
-            color: '#fff'
-          },
-          radius: '95%',
-          detail: {
-            formatter: '{value}%',
-            fontSize: 14,
-            offsetCenter: [0, 50]
-          },
-          center: ['50%', '60%'],
-          axisLabel: {
-            show: false,
-            distance: '-46'
-          },
-          axisTick: {
-            show: false
-          },
-          splitLine: {
-            show: false
-          },
-          pointer: {
-            show: true,
-            width: 8,
-          },
-          itemStyle: {
-            color: '#f13f40',
-            shadowColor: 'rgba(0, 0, 0, 0.5)',
-            shadowBlur: 10
-          },
-          // splitNumber: 12,
-          max: 120,
-          axisLine: {
-            show: true,
-            lineStyle: {
-              color: [[0.2, '#00adef'], [0.8, '#66cc9a'], [1, '#3b5998']],
-              // width: 15
+      series: [{
+        type: 'pie',
+        radius: [25, 70],
+        roseType: 'radius',
+        label:{
+          normal: {
+            color:'#fff',
+            formatter:'{b}\n{d}%',
+            fontSize:16
+          }
+        },
+        data: [{
+          value: data,
+          name: '机台',
+          label: {
+            normal: {
+              show: true,
+              position:'center',
             }
-          },
-          data: [{ value: data, name: '机台' }]
-        }
-      ]
+          }
+        },{
+          value: 120 - data,
+          label: {
+            normal: {
+              show: false,
+              position:'center',
+            }
+          }
+        }]
+      }]
     };
   myChart.setOption(option, true);
   $(window).bind('resize', function () {
@@ -373,7 +348,6 @@ function initList() {
   $('#myCarousel').carousel()
   var _chartInstances = $('.chart-instance');
   $.map(_chartInstances, function (item) {
-    console.log($(item));
     initRate(item, $(item).parent().data('value'));
   });
 }
