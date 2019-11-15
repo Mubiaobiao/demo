@@ -20,22 +20,15 @@ function getDate() {
   return _day + ' - ' + _monthMapper[_month] + ' - ' + _year;
 }
 
-function initLine(instance, title) {
+function initLine(instance, xData, data) {
   var dom = instance,
     myChart = echarts.init(dom),
-    xData = (function () {
-      let _year = [];
-      for (var i = 1960; i <= (new Date()).getFullYear(); i++) {
-        _year.push(i + '年');
-      }
-      return _year;
-    })(),
     option = {
       grid: {
         top: 80
       },
       title: {
-        text: title,
+        text: data.title,
         textStyle: {
           color: '#fff',
           fontSize: 24
@@ -109,16 +102,20 @@ function initLine(instance, title) {
       }],
       series: [
         {
-          name:'deliveries',
+          name: 'deliveries',
           type: 'line',
           smooth: true,
           symbol: 'none',
           sampling: 'average',
           itemStyle: {
-            color: 'rgb(255, 70, 131)'
+            color: data.color
           },
-          areaStyle: {normal: {}},
-          data: xData.map(() => Math.floor(Math.random() * 10000))
+          areaStyle: {
+            normal: {
+              color: data.color
+            }
+          },
+          data: data.data
         }
       ]
     };
@@ -142,8 +139,25 @@ $(function () {
     lang: 'zh',
     format: 'Y-m'
   });
-  $.map($('.chart-deliveries'), function (item) {
-    initLine(item, $(item).parent().attr('id'));
+  let xData = (function () {
+      let _year = [];
+      for (var i = 1960; i <= (new Date()).getFullYear(); i++) {
+        _year.push(i + '年');
+      }
+      return _year;
+    })(),
+    _dataList = [],
+    _colorList = ['#00c2c4', '#f3a888', '#13df95', '#ee8593', '#00cace'],
+    _chartList = ['ALL', 'CNC', 'EDM', 'WEDM','Other'];
+  for (let i = 0; i < _chartList.length; i++) {
+    _dataList.push({
+      title: _chartList[i],
+      data: xData.map(item => Math.floor(Math.random() * 1000)),
+      color: _colorList[i]
+    });
+  }
+  $.map($('.chart-deliveries'), function (item, index) {
+    initLine(item, xData, _dataList[index]);
   });
   $('.update-card').bind('click', function () {
     let _id = $(this).data('id'),

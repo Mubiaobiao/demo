@@ -110,13 +110,6 @@
   margin: 0 40px;
   position: relative;
   margin-bottom: 10px;
-
-}
-.workshop-title.buttonStyle{
-  display: inline-block;
-  cursor: pointer;
-  margin:0 0 0 40px;
-  padding:0 12px;
 }
 
 .workshop-title span {
@@ -134,7 +127,6 @@
   width: 40px;
   height: 45px;
   top: 0;
-
   background-repeat: no-repeat;
   background-size: auto 45px;
 }
@@ -147,6 +139,28 @@
 .workshop-title:after {
   background-image: url(../images/bg-title-right.png);
   right: -40px;
+}
+
+.workshop-title.buttonStyle{
+  display: inline-block;
+  cursor: pointer;
+  margin:0 0 0 8px;
+  padding:0 12px;
+  line-height: 44px;
+  background-image: url(../images/bg-btn-middle.png);
+}
+.workshop-title.buttonStyle:before,
+.workshop-title.buttonStyle:after{
+  width: 28px;
+  height: 45px;
+}
+.workshop-title.buttonStyle:before{
+  background-image: url(../images/bg-btn-left.png);
+  left: -10px;
+}
+.workshop-title.buttonStyle:after{
+  background-image: url(../images/bg-btn-right.png);
+  right: -28px;
 }
 
 .workshop-status {
@@ -379,4 +393,42 @@ body {
 
 .update-card{
   cursor: pointer;
+}
+
+.bgType1{
+  background: -webkit-gradient(linear, left top, right top, from(#169eff), to(#9dd7ff));
+  background: linear-gradient(to right, #169eff, #9dd7ff)
+}
+.bgType2{
+  background: -webkit-gradient(linear, left top, right top, from(#4894fa), to(#2cf5e0));
+  background: linear-gradient(to right, #4894fa, #2cf5e0)
+}
+.bgType3{
+  background: -webkit-gradient(linear, left top, right top, from(#fd7388), to(#fed1a4));
+  background: linear-gradient(to right, #fd7388, #fed1a4)
+}
+.bgType4{
+  background: -webkit-gradient(linear, left top, right top, from(#0880df), to(#ee9ae5));
+  background: linear-gradient(to right, #0880df, #ee9ae5)
+}
+
+.bgType5{
+  background: -webkit-gradient(linear, left top, right top, from(#6a67f6), to(#8fcaf8));
+  background: linear-gradient(to right, #6a67f6, #8fcaf8)
+}
+.bgType6{
+  background: -webkit-gradient(linear, left top, right top, from(#ff7396), to(#ebaf8b));
+  background: linear-gradient(to right, #ff7396, #ebaf8b)
+}
+.bgType7{
+  background: -webkit-gradient(linear, left top, right top, from(#08cdaf), to(#83dad2));
+  background: linear-gradient(to right, #08cdaf, #83dad2)
+}
+.bgType8{
+  background: -webkit-gradient(linear, left top, right top, from(#eac55a), to(#fee088));
+  background: linear-gradient(to right, #eac55a, #fee088)
+}
+.bgType9{
+  background: -webkit-gradient(linear, left top, right top, from(#a86af3), to(#be88ff));
+  background: linear-gradient(to right, #a86af3, #be88ff)
 }

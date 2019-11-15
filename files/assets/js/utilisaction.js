@@ -20,26 +20,25 @@ function getDate() {
   return _day + ' - ' + _monthMapper[_month] + ' - ' + _year;
 }
 
-function initLine(instance, title, barColor, ) {
+function initLine(instance, xData, data) {
   var dom = instance,
     myChart = echarts.init(dom),
-    xData = (function () {
-      let _week = [];
-      for (var i = 1; i <= 13; i++) {
-        _week.push(i + '周');
-      }
-      return _week;
-    })(),
     option = {
       title: {
-        text: title,
+        text: data.title,
         textStyle: {
           color: '#fff',
           fontSize: 24
         },
         left: 80
       },
-      color: [barColor],
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      color: data.color,
       legend: {
         show: true,
         right: 20,
@@ -83,14 +82,56 @@ function initLine(instance, title, barColor, ) {
         },
       },
       series: [{
-        name: 'utiliscation',
+        name: 'capacity',
         type: 'bar',
+        stack: 'utilisaction',
         barWidth: 45,
+        label: {
+          normal: {
+            show: true,
+            color: '#fff',
+            position: 'insideBottom'
+          }
+        },
         itemStyle: {
           shadowBlur: 10,
           shadowColor: 'rgba(0, 0, 0, 0.5)'
         },
-        data: xData.map(() => Math.floor(Math.random() * 1000))
+        data: data.capacity
+      }, {
+        name: 'plan',
+        type: 'bar',
+        stack: 'utilisaction',
+        barWidth: 45,
+        label: {
+          normal: {
+            show: true,
+            color: '#fff',
+            position: 'inside'
+          }
+        },
+        itemStyle: {
+          shadowBlur: 10,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        },
+        data: data.plan
+      }, {
+        name: 'real',
+        type: 'bar',
+        stack: 'utilisaction',
+        barWidth: 45,
+        label: {
+          normal: {
+            show: true,
+            color: '#fff',
+            position: 'insideTop'
+          }
+        },
+        itemStyle: {
+          shadowBlur: 10,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        },
+        data: data.real
       }]
     };
   myChart.setOption(option, true);
@@ -126,9 +167,27 @@ function coordYear() {
 $(function () {
   $('#date').text(getDate());
   coordYear();
-  var _colorList = ['#2c7be5', '#2c7be5', '#2c7be5', '#2c7be5', '#2c7be5'];
+  let xData = (function () {
+    let _week = [];
+    for (var i = 1; i <= 13; i++) {
+      _week.push(i + '周');
+    }
+    return _week;
+  })(),
+    _dataList = [],
+    _colorList = [['#0880df', '#43a1eb', '#8fcaf8'], ['#ff7396', '#fe9695', '#ebaf8b'], ['#08cdaf', '#44d3c1', '83dad2'], ['#eac55a', '#f4d370', '#fee088'], ['#a86af3', '#b479f9', '#be88ff']],
+    _chartList = ['ALL', 'CNC', 'EDM', 'WEDM', 'Other'];
+  for (let i = 0; i < _chartList.length; i++) {
+    _dataList.push({
+      title: _chartList[i],
+      capacity: xData.map(item => Math.floor(Math.random() * 1000)),
+      plan: xData.map(item => Math.floor(Math.random() * 1000)),
+      real: xData.map(item => Math.floor(Math.random() * 1000)),
+      color: _colorList[i]
+    });
+  }
   $.map($('.chart-utilisaction'), function (item, index) {
-    initLine(item, $(item).parent().attr('id'), _colorList[index]);
+    initLine(item, xData, _dataList[index]);
   });
   $('.update-card').bind('click', function () {
     let _id = $(this).data('id'),

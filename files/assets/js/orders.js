@@ -33,7 +33,7 @@ function initBarLine(instance, xData, data) {
         top: 20,
         left: 80
       },
-      color: ['#a1a3ff', '#55a1ff'],
+      color: data.color,
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -145,22 +145,22 @@ function initBarLine(instance, xData, data) {
       }]
     };
   myChart.setOption(option, true);
-  myChart.on('mouseover', function (param, a) {
+  myChart.on('mouseover', function (param) {
     let _index = xData.indexOf(param.name);
     let _dom = $(dom).parents('.col-xl-8').next().find('.chart-pie')[0];
-    initPie(_dom, { newMold: data.newMold[_index], parts: data.parts[_index] });
+    initPie(_dom, { newMold: data.newMold[_index], parts: data.parts[_index], color: data.color });
   });
   $(window).bind('resize', function () {
     myChart.resize();
   });
-  initPie($(dom).parents('.col-xl-8').next().find('.chart-pie')[0], { newMold: data.newMold[0], parts: data.parts[0] });
+  initPie($(dom).parents('.col-xl-8').next().find('.chart-pie')[0], { newMold: data.newMold[0], parts: data.parts[0], color:data.color });
 }
 
 function initPie(instance, data) {
   var dom = instance,
     myChart = echarts.init(dom),
     option = {
-      color: ['#a1a3ff', '#55a1ff'],
+      color: data.color,
       tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b} : {c} ({d}%)"
@@ -297,6 +297,7 @@ $(function () {
     _dataList = [],
     _newMold = 0,
     _parts = 0,
+    _color = [['#169eff','#9dd7ff'],['#4894fa','#2cf5e0'],['#fd7388','#fed1a4'],['#6a67f6','#ee9ae5']],
     _chartList = ['New Order', 'Plan Delivery', 'Actual Delivery', 'Delivery on time rate'];
   for (let i = 0; i < _chartList.length; i++) {
     _newMold = months.map(item => Math.floor(Math.random() * 1000));
@@ -305,6 +306,7 @@ $(function () {
       title: _chartList[i],
       newMold: _newMold,
       parts: _parts,
+      color:_color[i],
       all: months.map((item, index) => _newMold[index] + _parts[index])
     });
   }
