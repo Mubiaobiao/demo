@@ -38,7 +38,7 @@ function initLine(instance, xData, data) {
           type: 'shadow'
         }
       },
-      color: data.color,
+      color: ['#08cdaf','#ff7396','#eac55a'],
       legend: {
         show: true,
         right: 20,
@@ -84,54 +84,60 @@ function initLine(instance, xData, data) {
       series: [{
         name: 'capacity',
         type: 'bar',
-        stack: 'utilisaction',
-        barWidth: 45,
         label: {
           normal: {
             show: true,
             color: '#fff',
-            position: 'insideBottom'
+            position: 'insideBottom',
+            align: 'left',
+            verticalAlign: 'middle',
+            rotate:90
           }
-        },
-        itemStyle: {
-          shadowBlur: 10,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
         },
         data: data.capacity
       }, {
         name: 'plan',
         type: 'bar',
-        stack: 'utilisaction',
-        barWidth: 45,
         label: {
           normal: {
             show: true,
             color: '#fff',
-            position: 'inside'
+            position: 'insideBottom',
+            align: 'left',
+            verticalAlign: 'middle',
+            rotate:90
           }
-        },
-        itemStyle: {
-          shadowBlur: 10,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
         },
         data: data.plan
       }, {
         name: 'real',
         type: 'bar',
-        stack: 'utilisaction',
-        barWidth: 45,
         label: {
           normal: {
             show: true,
             color: '#fff',
-            position: 'insideTop'
+            position: 'insideBottom',
+            align: 'left',
+            verticalAlign: 'middle',
+            rotate:90
           }
         },
-        itemStyle: {
-          shadowBlur: 10,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
-        },
         data: data.real
+      },{
+        name: 'capacity-line',
+        type: 'line',
+        label: {
+          normal: {
+            show: true
+          }
+        },
+        smooth: true,
+        itemStyle: {
+          color: '#fff'
+        },
+        symbol: 'circle',
+        symbolSize: 6,
+        data: data.capacity
       }]
     };
   myChart.setOption(option, true);
@@ -175,15 +181,13 @@ $(function () {
     return _week;
   })(),
     _dataList = [],
-    _colorList = [['#0880df', '#43a1eb', '#8fcaf8'], ['#ff7396', '#fe9695', '#ebaf8b'], ['#08cdaf', '#44d3c1', '83dad2'], ['#eac55a', '#f4d370', '#fee088'], ['#a86af3', '#b479f9', '#be88ff']],
     _chartList = ['ALL', 'CNC', 'EDM', 'WEDM', 'Other'];
   for (let i = 0; i < _chartList.length; i++) {
     _dataList.push({
       title: _chartList[i],
       capacity: xData.map(item => Math.floor(Math.random() * 1000)),
       plan: xData.map(item => Math.floor(Math.random() * 1000)),
-      real: xData.map(item => Math.floor(Math.random() * 1000)),
-      color: _colorList[i]
+      real: xData.map(item => Math.floor(Math.random() * 1000))
     });
   }
   $.map($('.chart-utilisaction'), function (item, index) {

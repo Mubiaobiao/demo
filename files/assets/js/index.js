@@ -182,15 +182,35 @@ function initRate(instance, data) {
       tooltip: {
         show: false
       },
+      grid:{
+        top:10,
+        right:10,
+        bottom:10,
+        left:10
+      },
       series: [{
         type: 'pie',
-        radius: [25, 70],
-        roseType: 'radius',
-        label:{
+        radius: ['68%', '90%'],
+        avoidLabelOverlap: false,
+        label: {
           normal: {
+            show: false,
+            position: 'center',
             color:'#fff',
-            formatter:'{b}\n{d}%',
-            fontSize:16
+            fontSize:20,
+            formatter: '{d}%'
+          },
+          emphasis: {
+            show: true,
+            textStyle: {
+              fontSize: '30',
+              fontWeight: 'bold'
+            }
+          }
+        },
+        labelLine: {
+          normal: {
+            show: false
           }
         },
         data: [{
@@ -199,15 +219,25 @@ function initRate(instance, data) {
           label: {
             normal: {
               show: true,
-              position:'center',
+              position: 'center',
+            }
+          },
+          itemStyle:{
+            normal:{
+              color:'#29d389'
             }
           }
-        },{
+        }, {
           value: 120 - data,
           label: {
             normal: {
               show: false,
-              position:'center',
+              position: 'center',
+            }
+          },
+          itemStyle:{
+            normal:{
+              color:'#191943'
             }
           }
         }]
