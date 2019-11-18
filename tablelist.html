@@ -167,26 +167,76 @@
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="page-body">
-                    <div class="tl-header">
+                    <div class="tl-header m-b-15">
                       <div class="corner top-left"></div>
                       <div class="corner top-right"></div>
                       <div class="corner bottom-left"></div>
                       <div class="corner bottom-right"></div>
-                      <div class="form-inline">
-                        <div class="form-group newStyle">
-                          <label>Running Order:</label>
-                          <input type="text" class="form-control mx-sm-3" value="30" readonly>
+                      <div class="row no-margin tablelist-btn">
+                        <div class="col-xl-3">
+                          <div class="card bgtype101 update-card no-margin" data-id="all">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white m-b-5">Running Order</h4>
+                                  <h5 class="text-white m-b-0">New：50</h5>
+                                </div>
+                                <div class="col-4 text-right">
+                                  <i class="fa fa-calendar-check-o" style="font-size:40px;"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-group newStyle">
-                          <label>New:</label>
-                          <input type="text" class="form-control mx-sm-3" value="10" readonly>
+                        <div class="col-xl-3">
+                          <div class="card bgtype102 update-card no-margin" data-id="CNC">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white m-b-5">Running Order</h4>
+                                  <h5 class="text-white m-b-0">Parts：50</h5>
+                                </div>
+                                <div class="col-4 text-right">
+                                  <i class="fa fa-calendar-check-o" style="font-size:40px;"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-group newStyle">
-                          <label>Parts:</label>
-                          <input type="text" class="form-control mx-sm-3" value="20" readonly>
+                        <div class="col-xl-3">
+                          <div class="card bgtype103 update-card no-margin" data-id="EDM">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white m-b-5">All Orders</h4>
+                                  <h5 class="text-white m-b-0">New：50</h5>
+                                </div>
+                                <div class="col-4 text-right">
+                                  <i class="fa fa-calendar-check-o" style="font-size:40px;"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <p class="workshop-title">All Orders</p>
+                        <div class="col-xl-3">
+                          <div class="card bgtype104 update-card no-margin" data-id="WEDM">
+                            <div class="card-block">
+                              <div class="row align-items-end">
+                                <div class="col-8">
+                                  <h4 class="text-white m-b-5">All Orders</h4>
+                                  <h5 class="text-white m-b-0">Parts：50</h5>
+                                </div>
+                                <div class="col-4 text-right">
+                                  <i class="fa fa-calendar-check-o" style="font-size:40px;"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
+                    </div>
+                    <div class="m-b-15" style="text-align:center;">
+                      <p class="workshop-title buttonStyle" id="txtChange" data-value="1" style="padding: 0 60px;">All Orders</p>
                     </div>
                     <div class="tl-content">
                       <div class="corner top-left"></div>
@@ -417,7 +467,8 @@
                     </div>
                     </div>
                     <div class="tl-footer">
-                      <p class="workshop-title">Export Excel</p>
+                      <!-- <p class="workshop-title">Export Excel</p> -->
+                      <p class="workshop-title buttonStyle">Export Excel</p>
                     </div>
                   </div>
                 </div>
@@ -521,6 +572,14 @@
           autohidemode: true,
           cursorwidth: "2px", 
         });
+        $('#txtChange').click(function() {
+          var txt = $(this).attr('data-value');
+          if (txt == 1) {
+            $(this).attr('data-value', '2').text('Running Order');
+          } else {
+            $(this).attr('data-value', '1').text('All Orders');
+          }
+        });
         getData();
     });
     function getData() {
@@ -559,9 +618,9 @@
                   num++;
                   if (arr.indexOf(num) > -1) {
                     text += '<td>' +
-                      '<div class="progress progress-md ' + (parseInt(obj[y][i]) == 100 ? 'complete' : '') + '">' + 
-                        '<div class="progress-bar progress-bar-striped progress-bar-animated bg-info-gradient" style="width: ' + parseInt(obj[y][i]) + '%"></div>' + 
-                        '<span class="progress-num">' + (parseInt(obj[y][i]) + '%' || '') + '</span>' + 
+                      '<div class="progress progress-md ' + (parseInt((obj[y][i] || 0)) == 100 ? 'complete' : '') + '">' + 
+                        '<div class="progress-bar progress-bar-striped progress-bar-animated bg-info-gradient" style="width: ' + parseInt((obj[y][i] || 0)) + '%"></div>' + 
+                        '<span class="progress-num">' + (parseInt((obj[y][i] || 0)) + '%' || '') + '</span>' + 
                       '</div>' + 
                     '</td>';
                   } else {
