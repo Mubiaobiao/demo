@@ -179,69 +179,210 @@ function initRate(instance, data) {
   var dom = instance,
     myChart = echarts.init(dom),
     option = {
+      grid: {
+        top: 0,
+        right:0,
+        bottom:0,
+        left:0
+      },
       tooltip: {
         show: false
       },
-      grid:{
-        top:10,
-        right:10,
-        bottom:10,
-        left:10
+      toolbox: {
+        show: false
       },
-      series: [{
-        type: 'pie',
-        radius: ['68%', '90%'],
-        avoidLabelOverlap: false,
-        label: {
-          normal: {
-            show: false,
-            position: 'center',
-            color:'#fff',
-            fontSize:20,
-            formatter: '{d}%'
-          },
-          emphasis: {
+      series: [
+        {
+          name: '机台',
+          type: 'gauge',
+          center: ['50%', '50%'],
+          radius: '100%',
+          startAngle: 225,
+          endAngle: -45,
+          min: 0,
+          max: 120,
+          axisLine: {
             show: true,
+            lineStyle: {
+              width: 2,
+              color: [
+                [
+                  data / 120, new echarts.graphic.LinearGradient(
+                    0, 0, 1, 0, [{
+                      offset: 0,
+                      color: 'rgba(255,255,255,0)',
+                    },
+                    {
+                      offset: 1,
+                      color: 'white',
+                    }
+                  ]
+                  )
+                ],
+                [
+                  1, 'rgba(255,255,255, 0)'
+                ]
+              ]
+            }
+          },
+          axisTick: {
+            show: 0,
+          },
+          splitLine: {
+            show: 0,
+          },
+          axisLabel: {
+            show: 0
+          },
+          pointer: {
+            show: 0,
+          },
+          detail: {
+            show: 0
+          },
+          data: [{
+            value: data,
+          }]
+        },
+        // 外围刻度
+        {
+          type: 'gauge',
+          center: ['50%', '50%'],
+          radius: '90%', // 1行3个
+          splitNumber: 12,
+          min: 0,
+          max: 120,
+          startAngle: 225,
+          endAngle: -45,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              width: 1,
+              color: [
+                [1, 'rgba(0,0,0,0)']
+              ]
+            }
+          }, //仪表盘轴线
+          axisTick: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(255,255,255,0.6)',
+              width: 1
+            },
+            length: -6
+          }, //刻度样式
+          splitLine: {
+            show: true,
+            length: 10,
+            lineStyle: {
+              color: 'rgba(255,255,255,0.6)'
+            }
+          }, //分隔线样式
+          axisLabel: {
+            show: true,
+            distance: 2,
             textStyle: {
-              fontSize: '30',
+              color: 'white',
+              fontSize: '12',
               fontWeight: 'bold'
             }
+          },
+          pointer: {
+            show: 0
+          },
+          detail: {
+            show: 0
           }
         },
-        labelLine: {
-          normal: {
-            show: false
-          }
-        },
-        data: [{
-          value: data,
+        // 内侧指针、数值显示
+        {
           name: '机台',
-          label: {
-            normal: {
-              show: true,
-              position: 'center',
+          type: 'gauge',
+          center: ['50%', '50%'],
+          radius: '94%',
+          startAngle: 225,
+          endAngle: -45,
+          min: 0,
+          max: 120,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              width: 50,
+              color: [
+                [
+                  data / 120, new echarts.graphic.LinearGradient(
+                    0, 0, 1, 0, [{
+                      offset: 0,
+                      color: 'rgba(0,0,0, 0)',
+                    },
+                    {
+                      offset: 1,
+                      color: 'rgba(242,166,200,0.6)',
+                    }
+                  ]
+                  )
+                ],
+                [
+                  1, 'rgba(255,255,255, 0)'
+                ]
+              ]
             }
           },
-          itemStyle:{
-            normal:{
-              color:'#29d389'
-            }
-          }
-        }, {
-          value: 120 - data,
-          label: {
-            normal: {
-              show: false,
-              position: 'center',
+          axisTick: {
+            show: 0,
+          },
+          splitLine: {
+            show: 0,
+          },
+          axisLabel: {
+            show: 0
+          },
+          pointer: {
+            show: true,
+            length: '102%',
+            width: 3
+          },
+          title: {
+            show: true,
+            offsetCenter: [0, '65%'],
+            color: 'white',
+            fontSize: 20,
+            /* backgroundColor: "#D8d8d8",*/
+            borderRadius: 21,
+            padding: 5
+          },
+          detail: {
+            show: true,
+            offsetCenter: [0, 0],
+            textStyle: {
+              fontSize: 25,
+              color: '#fff'
+            },
+            formatter: [
+              '{value}' + ('%' || ''),
+              /* '{name|' + '机台' + '}'*/
+            ].join('\n'),
+
+            rich: {
+              name: {
+                fontSize: 20,
+                lineHeight: 10,
+                color: '#ddd',
+                padding: [30, 0, 0, 0]
+              }
             }
           },
-          itemStyle:{
-            normal:{
-              color:'#191943'
+          itemStyle: {
+            normal: {
+              color: 'white',
             }
-          }
-        }]
-      }]
+          },
+          data: [{
+            value: data,
+            name: '机台'
+          }]
+        }
+      ]
     };
   myChart.setOption(option, true);
   $(window).bind('resize', function () {

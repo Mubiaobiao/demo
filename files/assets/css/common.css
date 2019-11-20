@@ -277,6 +277,12 @@
   transform: rotate(180deg);
 }
 
+.abStyle{
+  position: absolute;
+  top:30px;
+  left:30px;
+}
+
 .pcoded[theme-layout="vertical"][vertical-placement="left"][vertical-nav-type="expanded"][vertical-effect="shrink"] .navbar-text {
   margin-left: 240px;
 }
@@ -365,7 +371,11 @@ body {
 .workshop-header .workshop-title{
   display: inline-block;
   padding:0 50px;
-  margin:0;
+  margin: 0 35px;
+}
+
+.font-xl{
+  font-size:20px;
 }
 
 .form-group.newStyle label{
@@ -430,5 +440,12 @@ body {
 }
 .bgType9{
   background: -webkit-gradient(linear, left top, right top, from(#a86af3), to(#be88ff));
-  background: linear-gradient(to right, #a86af3, #be88ff)
+  background: linear-gradient(to right, #625a6d, #be88ff)
+}
+
+.form-group.newStyle label{
+  font-size:18px;
+}
+.form-group.newStyle label,.form-group.newStyle .form-control::placeholder{
+  color:#00ffea;
 }

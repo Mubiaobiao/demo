@@ -290,6 +290,7 @@ function valincomebuildoption() {
 $(function () {
   $('#date').text(getDate());
   $("#startTime,#endTime").dateDropper({
+    hideDay:true,
     lang: 'zh',
     format: 'Y-m'
   });
