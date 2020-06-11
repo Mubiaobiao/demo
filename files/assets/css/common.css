@@ -449,3 +449,13 @@ body {
 .form-group.newStyle label,.form-group.newStyle .form-control::placeholder{
   color:#00ffea;
 }
+
+.modal.dark .modal-content{
+  background-color: rgba(18, 19, 49 );
+  color:#fff;
+  font-size:20px;
+}
+
+.modal.dark .modal-content .modal-header{
+  border-bottom-color:#2b215e;
+}

@@ -175,15 +175,15 @@ var _data = [{
   data17: '0',
   gaugeValue: 102
 }];
-function initRate(instance, data) {
+function initRate(instance, data, equModel) {
   var dom = instance,
     myChart = echarts.init(dom),
     option = {
       grid: {
         top: 0,
-        right:0,
-        bottom:0,
-        left:0
+        right: 0,
+        bottom: 0,
+        left: 0
       },
       tooltip: {
         show: false
@@ -385,6 +385,20 @@ function initRate(instance, data) {
       ]
     };
   myChart.setOption(option, true);
+  $(instance).click(function () {
+    $('#default-Modal').modal('show');
+    $('#equModel').val(equModel); //假设title1为设备型号或者其他查询条件
+    //获取时间及设备查询条件调用服务接口查询信息
+    const equModel = $('#equModel').val();
+    //调用接口获取数据
+    const data = getRangeDate('2000-01-01'); //假设服务端返回88
+    const startText = moment('2000-01-01').format('YYYY年MM月DD日');
+    const endText = moment(data.endDate).format('YYYY年MM月DD日')
+    $('#OEEDate').text(`从${startText} - ${endText}的OEE为`);
+    setTimeout(function () {
+      initLine(data.x, data.data);
+    }, 1000);
+  });
   $(window).bind('resize', function () {
     myChart.resize();
   });
@@ -415,7 +429,7 @@ function getDate() {
 }
 
 function transData(data) {
-  var _splitNumber = window.innerWidth >= 1920 ? 8 : 4;
+  var _splitNumber = 6;
   var _data = data,
     _groupData = [];
   for (var i = 0; i < _data.length; i += _splitNumber) {
@@ -430,7 +444,7 @@ function initList() {
   var _itemModal = function (list) {
     var _modalTemp = '';
     list.map(function (item) {
-      _modalTemp += `<div class="col-xl-3 col-md-6">
+      _modalTemp += `<div class="col-md-4">
           <div class="card newStyle" style="margin-bottom:15px;">
               <div class="corner top-left"></div>
               <div class="corner top-right"></div>
@@ -442,7 +456,7 @@ function initList() {
                           <img src="${item.imgUrl}" alt="">
                       </div>
                       <p class="workshop-title"><span>${item.title1}</span></p>
-                      <div class="workshop-rate" data-value="${item.gaugeValue}">
+                      <div class="workshop-rate" data-value="${item.gaugeValue}" data-equmodel="${item.title1}">
                           <div class="chart-instance"></div>
                       </div>
                   </div>
@@ -516,12 +530,95 @@ function initList() {
               </div>`;
   }
   $('#myCarousel .carousel-inner').html(_temp);
-  $('#myCarousel').carousel()
+  $('#myCarousel').carousel();
   var _chartInstances = $('.chart-instance');
   $.map(_chartInstances, function (item) {
-    initRate(item, $(item).parent().data('value'));
+    initRate(item, $(item).parent().data('value'), $(item).parent().data('equmodel'));
   });
 }
+
+function initLine(x, data) {
+  var option = {
+    grid:{
+      top:20
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: x,
+      axisLabel:{
+        color:'#fff'
+      }
+    },
+    yAxis: {
+      type: 'value',
+      axisLabel:{
+        color:'#fff'
+      }
+    },
+    dataZoom: [{
+      type: 'inside',
+      start: 0,
+      end: 10
+    }, {
+      start: 0,
+      end: 10,
+      handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+      handleSize: '80%',
+      handleStyle: {
+        color: '#fff',
+        shadowBlur: 3,
+        shadowColor: 'rgba(0, 0, 0, 0.6)',
+        shadowOffsetX: 2,
+        shadowOffsetY: 2
+      },
+      textStyle:{
+        color:'#fff'
+      }
+    }],
+    series: [{
+      data: data,
+      type: 'line',
+      smooth: true,
+      symbol: 'none',
+      sampling: 'average',
+      itemStyle: {
+        color: 'rgb(255, 70, 131)'
+      },
+      areaStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+          offset: 0,
+          color: 'rgb(255, 158, 68)'
+        }, {
+          offset: 1,
+          color: 'rgb(255, 70, 131)'
+        }])
+      }
+    }]
+  };
+  var line = echarts.init($('#OEEValue')[0]);
+  line.setOption(option);
+}
+
+function getRangeDate(startDate) {
+  var start = moment(startDate).format('YYYY-MM-DD').substr(0, 10) + ' 00:00:00';
+  var end = moment().format('YYYY-MM-DD').substr(0, 10) + ' 00:00:00';
+  var days = (moment(end).valueOf() - moment(start).valueOf()) / 86400000;
+  var daysStr = [];
+  var values = [];
+  for (var i = 0; i <= days; i++) {
+    daysStr.push(
+      moment(moment(start).valueOf() + i * 86400000).format('YYYY-MM-DD')
+    );
+    values.push(Math.floor(Math.random() * 1000));
+  }
+  return {
+    x: daysStr,
+    data: values,
+    endDate: moment(end).format('YYYY-MM-DD')
+  };
+}
+
 $(function () {
   initList();
   $(window).resize(function () {

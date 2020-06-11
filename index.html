@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Adminty - Premium Admin Template by Colorlib </title>
+  <title>VEM</title>
   <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 10]>
@@ -181,6 +181,37 @@
         </div>
       </div>
     </div>
+    <div class="modal fade dark" id="default-Modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">OEE</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <input type="hidden" id="equModel">
+            <!-- <div class="clearfix">
+              <div class="form-inline pull-right">
+                <div class="form-group newStyle">
+                  <label>时间段</label>
+                  <input type="text" class="form-control mx-sm-3" placeholder="YEAR/MONTH" id="rangeTime" readonly="readonly">
+                </div>
+                <p class="workshop-title buttonStyle" id="queryOEE">查询</p>
+              </div>
+            </div> -->
+            <p id="OEEDate" style="font-size:20px;">
+
+            </p>
+            <div id="OEEValue" style="height:300px;">
+
+            </div>
+            <p>OEE=天数内的实际产能/(24*天数)*100%（24为计划产能）</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Warning Section Starts -->
     <!-- Older IE warning message -->
@@ -241,6 +272,7 @@
     <script src="./files/assets/js/pcoded.min.js"></script>
     <!-- custom js -->
     <script src="./files/assets/js/vartical-layout.min.js"></script>
+    <script src="./files/assets/js/moment.js"></script>
     <script type="text/javascript" src="./files/assets/js/script.min.js"></script>
     <script type="text/babel" src="./files/assets/js/index.js"></script>
 </body>

@@ -518,11 +518,11 @@ p {
 
 .card-block ul li.list-inline-item {
   display: inline-block;
-  float: left
+  float: left;
 }
 
 .modal {
-  z-index: 99999999999
+  z-index: 2000
 }
 
 .bd-example .modal {
