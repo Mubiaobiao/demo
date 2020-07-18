@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Adminty - Premium Admin Template by Colorlib </title>
+  <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="#">
+  <meta name="keywords"
+    content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+  <meta name="author" content="#">
+  <!-- Favicon icon -->
+  <link rel="icon" href="./files/assets/images/favicon.ico" type="image/x-icon">
+  <!-- Google font-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  <!-- Required Fremwork -->
+  <link rel="stylesheet" type="text/css" href="./files/bower_components/bootstrap/css/bootstrap.min.css">
+  <!-- feather Awesome -->
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/feather/css/feather.css">
+  <!-- simple-line-icons -->
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/themify-icons/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/icon/font-awesome/css/font-awesome.min.css">
+  <!-- Style.css -->
+  <link rel="stylesheet" type="text/css" href="./files/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/css/common.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/css/tablelist.css">
+  <link rel="stylesheet" type="text/css" href="./files/assets/css/jquery.mCustomScrollbar.css">
+  <script async="" src="./files/assets/js/echarts.min.js"></script>
+  <script src="./files/assets/js/babel.min.js"></script>
+  <style>
+    .pcoded-inner-title-new {
+      height: 70px;
+      line-height: 70px;
+      position: relative;
+      text-align: center;
+      font-size: 42px;
+      margin-left: 20px;
+      color: rgb(0 255 234);
+      margin-bottom: 5px;
+    }
+
+    .pcoded-inner-title-new.withLogo {
+      background: url(./files/assets/images/logo.png) no-repeat;
+      background-position: left center;
+      background-size: auto 80%;
+    }
+
+    .tl-table tr td {
+      height: 27px;
+      line-height: 27px;
+      min-height: 27px;
+      padding: 0;
+    }
+
+    .tl-table2 tr td {
+      height: 85px;
+      line-height: 85px;
+      min-height: 85px;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+      <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+          <div class="">
+            <div style="width:76%;float: left;">
+              <div class="pcoded-inner-content" style="padding-right:2px;">
+                <div class="pcoded-inner-title-new withLogo">
+                  <div style="position: relative;z-index: 100;">
+                    五金模具状态一览表
+                  </div>
+                </div>
+                <div class="main-body">
+                  <div class="page-wrapper" style="padding:0 0 1rem;">
+                    <div class="page-body">
+                      <div class="tl-content" id="table-list">
+                        <div class="corner top-left"></div>
+                        <div class="corner top-right"></div>
+                        <div class="corner bottom-left"></div>
+                        <div class="corner bottom-right"></div>
+                        <div class="tl-content-l text-center">
+                          <table class="tl-table">
+                            <tr>
+                              <td>序号</td>
+                              <td>模号</td>
+                              <td>钳工</td>
+                              <td>零件/计划</td>
+                              <td>出图</td>
+                              <td>材料</td>
+                              <td>CNC开初</td>
+                              <td>铣床</td>
+                              <td>热处理</td>
+                              <td>研磨</td>
+                              <td>CNC精铣</td>
+                              <td>线割</td>
+                              <td>检测</td>
+                              <td>标准件</td>
+                              <td>配模</td>
+                              <td>T0</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="tl-content-r text-center" id="oreder-table">
+                          <table class="tl-table">
+                            <tbody></tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="width:24%;float: left;">
+              <div class="pcoded-inner-content" style="padding-left:2px;">
+                <div class="pcoded-inner-title-new ">
+                  <div style="position: relative;z-index: 100;">
+                    修改模一览表
+                  </div>
+                </div>
+                <div class="main-body">
+                  <div class="page-wrapper" style="padding:0 0 1rem;">
+                    <div class="page-body">
+                      <div class="tl-content" id="table-list1">
+                        <div class="corner top-left"></div>
+                        <div class="corner top-right"></div>
+                        <div class="corner bottom-left"></div>
+                        <div class="corner bottom-right"></div>
+                        <div class="tl-content-l text-center">
+                          <table class="tl-table">
+                            <tr>
+                              <td>序号</td>
+                              <td>模号</td>
+                              <td>钳工</td>
+                              <td>交期</td>
+                              <td>备注</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="tl-content-r text-center" id="oreder-table1">
+                          <table class="tl-table tl-table2">
+                            <tbody></tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 10]>
+    <div class="ie-warning">
+        <h1>Warning!!</h1>
+        <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+        <div class="iew-container">
+            <ul class="iew-download">
+                <li>
+                    <a href="http://www.google.com/chrome/">
+                        <img src="./files/assets/images/browser/chrome.png" alt="Chrome">
+                        <div>Chrome</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.mozilla.org/en-US/firefox/new/">
+                        <img src="./files/assets/images/browser/firefox.png" alt="Firefox">
+                        <div>Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com">
+                        <img src="./files/assets/images/browser/opera.png" alt="Opera">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.apple.com/safari/">
+                        <img src="./files/assets/images/browser/safari.png" alt="Safari">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                        <img src="./files/assets/images/browser/ie.png" alt="">
+                        <div>IE (9 & above)</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>Sorry for the inconvenience!</p>
+    </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="./files/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./files/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="./files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="./files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="./files/bower_components/modernizr/js/modernizr.js"></script>
+    <!-- Chart js -->
+    <script src="./files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./files/assets/js/pcoded.min.js"></script>
+    <!-- custom js -->
+    <script src="./files/assets/js/vartical-layout.min.js"></script>
+    <script type="text/javascript" src="./files/assets/js/script.min.js"></script>
+    <!-- jquery nicescroll js -->
+    <script type="text/javascript" src="./files/assets/js/jquery.nicescroll.min.js"></script>
+    <script type="text/babel">
+      $(function () {
+        calcTableHeight();
+        getTableData();
+        getTData();
+        $('.tl-content-r').niceScroll({
+          cursorborder: "",
+          cursorcolor: "#aaa",
+          boxzoom: false,
+          autohidemode: true,
+          cursorwidth: "2px",
+        });
+        $(window).resize(() => {
+          calcTableHeight();
+        });
+        autoScroll();
+      });
+
+      function autoScroll() {
+        window.scrollIndex = 1;
+        setInterval(() => {
+          const winH = $(window).height();
+          const rows = parseInt((winH - 158) / 87);
+          const tHeight = rows * 87;
+          if (tHeight * window.scrollIndex >= $('.tl-content-r')[0].scrollHeight) {
+            $('.tl-content-r').getNiceScroll(0).doScrollTop(0);
+            $('.tl-content-r').getNiceScroll(1).doScrollTop(0);
+            window.scrollIndex = 1;
+          } else {
+            $('.tl-content-r').getNiceScroll(0).doScrollTop(tHeight * window.scrollIndex);
+            $('.tl-content-r').getNiceScroll(1).doScrollTop(tHeight * window.scrollIndex);
+            window.scrollIndex += 1;
+          }
+        }, 1000 * 6 * 1)
+      }
+
+      function calcTableHeight() {
+        const winH = $(window).height();
+        const rows = parseInt((winH - 87) / 87);
+        $('#oreder-table').height(rows * 87);
+        $('#table-list').height(rows * 87 + 27);
+        $('#oreder-table1').height(rows * 87);
+        $('#table-list1').height(rows * 87 + 27);
+      }
+
+      function getTData() {
+        $.getJSON('./data/order3.json', respT => {
+          console.log(respT);
+          const dataList = respT.data;
+          let temp = '';
+          if (dataList && dataList.length > 0) {
+            for (let i = 0; i < dataList.length; i++) {
+              temp += '<tr>'
+              temp += '<td>' + dataList[i]['Index'] + '</td>';
+              temp += '<td>' + dataList[i]['Order'] + '</td>';
+              temp += '<td>' + dataList[i]['Fitter'] + '</td>';
+              temp += '<td>' + dataList[i]['CAD'] + '</td>';
+              temp += '<td>' + dataList[i]['Material'] + '</td>';
+              temp += '</tr>';
+            }
+          }
+          $('#oreder-table1 .tl-table tbody').html(temp);
+        });
+      }
+
+      function getTableData() {
+        $.getJSON('./data/order2.json', res => {
+          const coordTr = item => {
+            let tempItem = '';
+            for (let i = 0; i < item.length; i++) {
+              tempItem += '<tr>';
+              tempItem += '<td>' + item[i]['Name'] + '</td>';
+              if (item[i]['Name'] === '计划') {
+                tempItem += '<td>' + item[i]['CAD'] || '' + '</td>';
+                tempItem += '<td>' + item[i]['Material'] + '</td>';
+              }else{
+                tempItem += '<td rowspan="3">' + item[i]['CAD'] || '' + '</td>';
+                tempItem += '<td rowspan="3">' + item[i]['Material'] + '</td>';
+              }
+              tempItem += '<td>' + item[i]['CNCR'] + '</td>';
+              tempItem += '<td>' + item[i]['Milling'] + '</td>';
+              tempItem += '<td>' + item[i]['Heat'] + '</td>';
+              tempItem += '<td>' + item[i]['Grinding'] + '</td>';
+              tempItem += '<td>' + item[i]['CNCF'] + '</td>';
+              tempItem += '<td>' + item[i]['WEDM'] + '</td>';
+              tempItem += '<td>' + item[i]['QC'] + '</td>';
+              if (item[i]['Name'] === '计划') {
+                tempItem += '<td>' + item[i]['ST'] + '</td>';
+                tempItem += '<td>' + item[i]['Assemble'] + '</td>';
+                tempItem += '<td>' + item[i]['T0'] + '</td>';
+              } else if (item[i]['Name'] === '模板') {
+                tempItem += '<td rowspan="2">' + item[i]['ST'] + '</td>';
+                tempItem += '<td rowspan="2">' + item[i]['Assemble'] + '</td>';
+                tempItem += '<td rowspan="2">' + item[i]['T0'] + '</td>';
+              }
+              tempItem += '</tr>';
+            }
+            return tempItem;
+          }
+
+          const dataList = res.data;
+          let temp = '';
+          if (dataList && dataList.length > 0) {
+            for (let i = 0; i < dataList.length; i++) {
+              temp += '<tr>'
+              temp += '<td rowspan="4">' + dataList[i]['Index'] + '</td>';
+              temp += '<td rowspan="4">' + dataList[i]['Order'] + '</td>';
+              temp += '<td rowspan="4">' + dataList[i]['Fitter'] + '</td>';
+              temp += '</tr>';
+              temp += coordTr(dataList[i]['Plan']);
+            }
+          }
+
+          $('#oreder-table .tl-table tbody').html(temp);
+        });
+      }
+
+    </script>
+</body>
+
+</html>
